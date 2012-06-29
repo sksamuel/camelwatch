@@ -14,7 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sksamuel.camelwatch.CamelJmxConnection;
+import com.sksamuel.camelwatch.CamelConnection;
+import com.sksamuel.camelwatch.CamelConnectionFactory;
 import com.sksamuel.camelwatch.Endpoint;
 import com.sksamuel.camelwatch.Route;
 
@@ -26,17 +27,20 @@ import com.sksamuel.camelwatch.Route;
 public class RouteController {
 
 	@Autowired
-	private CamelJmxConnection	connector;
+	private CamelConnectionFactory	connector;
 
 	@RequestMapping("list")
 	public String list(ModelMap map) throws InstanceNotFoundException, IntrospectionException, MalformedObjectNameException,
 			ReflectionException, NullPointerException, MBeanException, IOException {
-		List<Route> routes = connector.getRoutes();
+
+		CamelConnection conn = connector.getConnection();
+
+		List<Route> routes = conn.getRoutes();
 		map.put("routes", routes);
 
-		List<Endpoint> endpoints = connector.getEndpoints();
+		List<Endpoint> endpoints = conn.getEndpoints();
 		map.put("endpoints", endpoints);
 
-		return "list";
+		return "overview";
 	}
 }

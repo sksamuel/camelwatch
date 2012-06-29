@@ -4,18 +4,15 @@ import java.io.IOException;
 
 import javax.management.MalformedObjectNameException;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 /**
  * @author Stephen K Samuel samspade79@gmail.com 29 Jun 2012 00:49:09
  * 
  */
-public class CamelJmxConnectionFactory {
+public class CamelConnectionFactory {
 
-	@Autowired
 	private String	url;
 
-	public CamelConnection getConnection(String url) throws MalformedObjectNameException, NullPointerException, IOException {
+	public CamelConnection getConnection() throws MalformedObjectNameException, NullPointerException, IOException {
 		return new CamelJmxConnection(url);
 	}
 
@@ -26,4 +23,5 @@ public class CamelJmxConnectionFactory {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
 }
