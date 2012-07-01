@@ -1,5 +1,6 @@
 package com.sksamuel.camelwatch;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.sksamuel.camelwatch.consumer.Consumer;
@@ -32,5 +33,9 @@ public interface CamelConnection {
 	RouteOperations getRouteOperations(String routeId) throws Exception;
 
 	List<Route> getRoutes() throws Exception;
+
+	Collection<CamelBean> getProcessors(String routeId) throws Exception;
+
+	List<CamelBean> getProcessors() throws Exception;
 
 }

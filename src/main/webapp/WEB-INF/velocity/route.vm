@@ -2,13 +2,16 @@
 
 
 <table border="1" cellspacing="0" cellpadding="3">
-<caption>Route: $route.routeId</caption>
+<caption>Route</caption>
 <tr>
 	<td>Camel Id</td>
 	<td>$route.camelId</td>
+</tr><tr>
+	<td>Route Id</td>
+	<td>$route.routeId</td>
 </tr>
 <tr>
-	<td>endpointUri</td>
+	<td>Endpoint Uri</td>
 	<td>$route.endpointUri</td>
 </tr>
 <tr>
@@ -16,12 +19,8 @@
 	<td>$route.description</td>
 </tr>
 <tr>
-	<td>routePolicyList</td>
+	<td>Route Policy List</td>
 	<td>$route.routePolicyList</td>
-</tr>
-<tr>
-	<td>lastExchangeCompletedExchangeId</td>
-	<td>$route.lastExchangeCompletedExchangeId</td>
 </tr>
 <tr>
 	<td>State</td>
@@ -35,31 +34,49 @@
 <table border="1" cellspacing="0" cellpadding="3">
 <caption>Statistics</caption>
 <tr>
-	<td>exchangesTotal</td>
-	<td>$route.exchangesTotal</td>
-</tr>
-<tr>
-	<td>routePolicyList</td>
-	<td>$route.routePolicyList</td>
-</tr>
-<tr>
-	<td>lastExchangeCompletedExchangeId</td>
+	<td>LastExchangeCompletedExchangeId</td>
 	<td>$route.lastExchangeCompletedExchangeId</td>
 </tr>
 <tr>
-	<td>exchangesTotal</td>
+	<td>ExchangesTotal</td>
 	<td>$route.exchangesTotal</td>
 </tr>
 <tr>
-	<td>State</td>
-	<td>$route.state</td>
-</tr>
-<tr>
-	<td>failuresHandled</td>
+	<td>FailuresHandled</td>
 	<td>$route.failuresHandled</td>
 </tr>
 </table>
 
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Processors</caption>
+<tr>
+ <th>Processor Id</th>
+ <th>State</th>
+ <th>Last Completed</th>
+ <th>Last Failure</th>
+ <th>Inflight</th>
+ <th>Completed</th>
+ <th>Failed</th>
+ <th>Total</th>
+ <th>Mean Time</th>
+</tr>
+
+#foreach ($processor in $processors)
+<tr>
+	<td>$processor.properties.ProcessorId</td>
+ 	<td>$processor.properties.State</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $processor.properties.LastExchangeCompletedTimestamp)</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $processor.properties.LastExchangeFailureTimestamp)</td>
+ 	<td>$!processor.properties.InflightExchanges</td>
+ 	<td>$!processor.properties.ExchangesCompleted</td>
+ 	<td>$!processor.properties.ExchangesFailed</td>
+ 	<td>$!processor.properties.ExchangesTotal</td>
+ 	<td>$!processor.properties.MeanProcessingTime ms</td>
+</tr>
+#end
+</table>
 
 
 

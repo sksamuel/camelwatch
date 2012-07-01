@@ -1,0 +1,98 @@
+#parse("header.vm")
+
+<h1>Camel Watch: $camelId</h1>
+
+#parse("message.vm")
+
+<table cellspacing="0" cellpadding="3">
+<caption>Routes</caption>
+<tr>
+ <th>Route Id</th>
+ <th>State</th>
+ <th>Last Completed</th>
+ <th>Last Failure</th>
+ <th>Inflight</th>
+ <th>Load</th>
+ <th>Commands</th>
+</tr>
+
+#foreach ($route in $routes)
+<tr>
+	<td><a href="route/$route.routeId">$route.routeId</a></td>
+ 	<td>$route.state</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.lastExchangeCompletedTimestamp)</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.lastExchangeFailureTimestamp)</td>
+ 	<td>$!route.inflightExchanges</td>
+ 	<td>$!route.load01 / $!route.load05 / $!route.load15</td>
+	<td><a href="route/$route.routeId/start">Start</a> <a href="route/$route.routeId/stop">Stop</a></td>
+</tr>
+#end
+</table>
+
+
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Consumers</caption>
+<tr>
+ <th>Route Id</th>
+ <th>State</th>
+ <th>Inflight</th>
+ <th>Commands</th>
+</tr>
+#foreach ($consumer in $consumers)
+<tr>
+	<td><a href="consumer/$consumer.name">$consumer.routeId</a></td>
+ 	<td>$consumer.state</td>
+ 	<td>$!consumer.inflightExchanges</td>
+	<td rowspan="2"><a href="consumer/$consumer.name/start">Start</a> <a href="consumer/$consumer.name/stop">Stop</a></td>
+</tr>
+<tr>
+	<td colspan="3">$consumer.endpointUri</td>
+</tr>
+#end
+</table>
+
+
+
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Endpoints</caption>
+<tr>
+ <th>State</th>
+ <th>Singleton</th>
+</tr>
+#foreach ($endpoint in $endpoints)
+<tr>
+ 	<td>$!endpoint.properties.State</td>
+ 	<td>$!endpoint.properties.Singleton</td>
+</tr>
+<tr>
+	<td colspan="4">$endpoint.properties.EndpointUri</td>
+</tr>
+#end
+</table>
+
+
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Error Handlers</caption>
+<tr>
+ <th>Name</th>
+ <th>Support Redelivery</th>
+ <th>Maximum Redeliveries</th>
+ <th>Dead Letter Channel</th>
+</tr>
+#foreach ($errorhandler in $errorhandlers)
+<tr>
+	<td><a href="errorHandler/$errorhandler.name">$errorhandler.name</a></td>
+	<td>$errorhandler.properties.SupportRedelivery</td>
+ 	<td>$errorhandler.properties.MaximumRedeliveries</td>
+ 	<td>$errorhandler.properties.DeadLetterChannel</td>
+</tr>
+#end
+</table>
+
+#parse("footer.vm")

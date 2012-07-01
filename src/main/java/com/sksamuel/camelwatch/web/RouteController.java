@@ -63,15 +63,8 @@ public class RouteController {
 		Route route = conn.getRoute(routeId);
 		map.put("route", route);
 		map.put("message", message);
+		map.put("processors", conn.getProcessors(routeId));
 		return "route";
-	}
-
-	@RequestMapping("shutdown")
-	public String shutdown(@PathVariable("routeId") String routeId) throws Exception {
-		CamelConnection conn = connectionFactory.getConnection();
-		RouteOperations routeOps = conn.getRouteOperations(routeId);
-		routeOps.shutdown();
-		return getRedirect(routeId);
 	}
 
 	@RequestMapping("start")

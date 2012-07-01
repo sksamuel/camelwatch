@@ -1,6 +1,7 @@
 package com.sksamuel.camelwatch;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,8 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
 import com.sksamuel.camelwatch.consumer.Consumer;
 import com.sksamuel.camelwatch.consumer.ConsumerFactory;
@@ -70,6 +73,23 @@ public class CamelJmxConnection implements CamelConnection {
 		ObjectInstance instance = getObjectInstance("consumers", consumerName);
 		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
 		return new ConsumerFactory().buildConsumer(instance, conn, info);
+	}
+
+	@Override
+	public List<CamelBean> getProcessors() throws Exception {
+		return getCamelBeans("processors");
+	}
+
+	@Override
+	public Collection<CamelBean> getProcessors(final String routeId) throws Exception {
+		List<CamelBean> camelBeans = getCamelBeans("processors");
+		return Collections2.filter(camelBeans, new Predicate<CamelBean>() {
+
+			@Override
+			public boolean apply(CamelBean input) {
+				return routeId.equals(input.getProperties().get("RouteId"));
+			}
+		});
 	}
 
 	@Override
