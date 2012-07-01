@@ -17,18 +17,14 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:web.properties</value>
+				<value>classpath:camelwatch.properties</value>
 			</list>
 		</property>
 		<property name="fileEncoding" value="utf-8" />
 		<property name="ignoreResourceNotFound" value="true" />
 	</bean>
 
-	<import resource="spring-web-mvc.xml" />
+	<import resource="spring-camelwatch-mvc.xml" />
 
-	<bean id="connectionFactory" class="com.sksamuel.camelwatch.CamelConnectionFactory">
-		<property name="url"
-			value="service:jmx:rmi://opta-ecb.otherhosting.net:10002/jndi/rmi://opta-ecb.otherhosting.net:10001/jmxrmi" />
-	</bean>
 
 </beans>
