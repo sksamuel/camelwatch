@@ -1,4 +1,4 @@
-package com.sksamuel.camelwatch;
+package com.sksamuel.camelwatch.route;
 
 import java.util.Date;
 

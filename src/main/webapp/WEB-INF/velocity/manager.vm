@@ -4,6 +4,31 @@
 
 #parse("message.vm")
 
+
+<table cellspacing="0" cellpadding="3">
+<caption>Contexts</caption>
+<tr>
+ <th>Camel Id</th>
+ <th>Camel Version</th>
+ <th>State</th>
+ <th>Inflight</th>
+ <th>Load</th>
+ <th>Uptime</th>
+</tr>
+
+#foreach ($context in $contexts)
+<tr>
+	<td>$context.camelId</td>
+	<td>$context.camelVersion</td>
+ 	<td>$context.state</td>
+ 	<td>$!context.inflightExchanges</td>
+ 	<td>$context.load01 $context.load05 $context.load15</td>
+	<td>$context.uptime</td>
+</tr>
+#end
+</table>
+
+
 <table cellspacing="0" cellpadding="3">
 <caption>Routes</caption>
 <tr>

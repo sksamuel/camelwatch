@@ -16,6 +16,16 @@ import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 
 import com.google.common.collect.Lists;
+import com.sksamuel.camelwatch.consumer.Consumer;
+import com.sksamuel.camelwatch.consumer.ConsumerFactory;
+import com.sksamuel.camelwatch.consumer.ConsumerOperations;
+import com.sksamuel.camelwatch.consumer.ConsumerOperationsJmxImpl;
+import com.sksamuel.camelwatch.context.Context;
+import com.sksamuel.camelwatch.context.ContextFactory;
+import com.sksamuel.camelwatch.route.Route;
+import com.sksamuel.camelwatch.route.RouteFactory;
+import com.sksamuel.camelwatch.route.RouteOperations;
+import com.sksamuel.camelwatch.route.RouteOperationsJmxImpl;
 
 /**
  * @author Stephen K Samuel samspade79@gmail.com 29 Jun 2012 00:26:13
@@ -67,6 +77,18 @@ public class CamelJmxConnection implements CamelConnection {
 		}
 
 		return consumers;
+	}
+
+	@Override
+	public List<Context> getContexts() throws Exception {
+		Set<ObjectInstance> beans = getBeansOfType("context");
+		List<Context> contexts = Lists.newArrayList();
+		for (ObjectInstance instance : beans) {
+			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
+			Context context = new ContextFactory().build(instance, conn, info);
+			contexts.add(context);
+		}
+		return contexts;
 	}
 
 	@Override

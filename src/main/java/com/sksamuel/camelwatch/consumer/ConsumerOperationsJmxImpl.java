@@ -1,4 +1,4 @@
-package com.sksamuel.camelwatch;
+package com.sksamuel.camelwatch.consumer;
 
 import javax.management.MBeanInfo;
 import javax.management.MBeanServerConnection;

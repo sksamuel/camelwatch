@@ -1,4 +1,4 @@
-package com.sksamuel.camelwatch;
+package com.sksamuel.camelwatch.consumer;
 
 /**
  * @author Stephen K Samuel samspade79@gmail.com 1 Jul 2012 17:14:58

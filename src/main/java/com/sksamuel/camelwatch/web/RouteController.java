@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sksamuel.camelwatch.CamelConnection;
 import com.sksamuel.camelwatch.CamelConnectionFactory;
-import com.sksamuel.camelwatch.Route;
-import com.sksamuel.camelwatch.RouteOperations;
+import com.sksamuel.camelwatch.route.Route;
+import com.sksamuel.camelwatch.route.RouteOperations;
 
 /**
  * @author Stephen K Samuel samspade79@gmail.com 1 Jul 2012 19:02:59

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sksamuel.camelwatch.CamelConnection;
 import com.sksamuel.camelwatch.CamelConnectionFactory;
-import com.sksamuel.camelwatch.Consumer;
-import com.sksamuel.camelwatch.ConsumerOperations;
+import com.sksamuel.camelwatch.consumer.Consumer;
+import com.sksamuel.camelwatch.consumer.ConsumerOperations;
 
 /**
  * @author Stephen K Samuel samspade79@gmail.com 1 Jul 2012 19:02:59
@@ -43,7 +43,7 @@ public class ConsumerController {
 		CamelConnection conn = connectionFactory.getConnection();
 		ConsumerOperations ops = conn.getConsumerOperations(consumerName);
 		ops.start();
-		map.put("message", "Consumer '" + consumerName + "' started");
+		map.put("message", "Context '" + consumerName + "' started");
 		return getRedirect(consumerName);
 	}
 
@@ -52,7 +52,7 @@ public class ConsumerController {
 		CamelConnection conn = connectionFactory.getConnection();
 		ConsumerOperations ops = conn.getConsumerOperations(consumerName);
 		ops.stop();
-		map.put("message", "Consumer '" + consumerName + "' stopped");
+		map.put("message", "Context '" + consumerName + "' stopped");
 		return getRedirect(consumerName);
 	}
 }
