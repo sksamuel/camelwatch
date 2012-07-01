@@ -10,7 +10,6 @@ public class Route {
 
 	private String	routeId;
 	private String	camelId;
-	private String	description;
 	private String	endpointUri;
 	private long	exchangesCompleted;
 	private Integer	exchangedFailed;
@@ -19,6 +18,7 @@ public class Route {
 	private long	minProcessingTime;
 	private String	state;
 	private String	name;
+	private String	description;
 	private long	lastProcessingTime;
 	private long	totalProcessingTime;
 	private boolean	statisticsEnabled;
@@ -116,6 +116,10 @@ public class Route {
 
 	public long getLastProcessingTime() {
 		return lastProcessingTime;
+	}
+
+	public String getLoad01() {
+		return load01;
 	}
 
 	public String getLoad05() {
@@ -244,6 +248,10 @@ public class Route {
 
 	public void setLastProcessingTime(long lastProcessingTime) {
 		this.lastProcessingTime = lastProcessingTime;
+	}
+
+	public void setLoad01(String load01) {
+		this.load01 = load01;
 	}
 
 	public void setLoad05(String load05) {

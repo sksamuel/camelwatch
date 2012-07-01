@@ -1,0 +1,62 @@
+#parse("header.vm")
+
+<h1>CamelWatch: Apache Camel Monitoring</h1>
+
+#parse("message.vm")
+
+<table cellspacing="0" cellpadding="3">
+<caption>Routes</caption>
+<tr>
+ <th>Camel Id</th>
+ <th>Route Id</th>
+ <th>State</th>
+ <th>Last Completion Time</th>
+ <th>Last Failure Time</th>
+ <th>Inflight</th>
+ <th>Load</th>
+ <th>Commands</th>
+</tr>
+
+#foreach ($route in $routes)
+<tr>
+	<td>$route.camelId</td>
+	<td><a href="route/$route.routeId">$route.routeId</a></td>
+ 	<td>$route.state</td>
+	<td>$!route.lastExchangeCompletedTimestamp</td>
+	<td>$!route.lastExchangeFailureTimestamp</td>
+ 	<td>$!route.inflightExchanges</td>
+ 	<td>$!route.load01 $route.load05 $route.load15</td>
+	<td><a href="route/$route.routeId/start">Start</a> <a href="route/$route.routeId/stop">Stop</a></td>
+</tr>
+#end
+</table>
+
+
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Consumers</caption>
+<tr>
+ <th>CamelId</th>
+ <th>RouteId</th>
+ <th>State</th>
+ <th>Inflight</th>
+ <th>Commands</th>
+</tr>
+#foreach ($consumer in $consumers)
+<tr>
+	<td>$consumer.camelId</td>
+	<td>$consumer.routeId</td>
+ 	<td>$consumer.state</td>
+ 	<td class="row-center" bgcolor="#FFFFFF">$!consumer.inflightExchanges</td>
+	<td class="row-left" bgcolor="#FFFFFF" rowspan="2"><a href="consumer/$consumer.routeId/start">Start</a> <a href="consumer/$consumer.routeId/stop">Stop</a> <a href="consumer/$consumer.routeId/shutdown">Shutdown</a></td>
+</tr>
+<tr>
+	<td class="row-left" bgcolor="#FFFFFF" colspan="4">$consumer.endpointUri</td>
+
+</tr>
+#end
+</table>
+
+
+#parse("footer.vm")

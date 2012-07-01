@@ -6,17 +6,11 @@ package com.sksamuel.camelwatch;
  */
 public interface ConsumerOperations {
 
-	void setStatisticsEnabled(boolean enabled);
+	void setInitialDelay(long initialDelay);
 
 	void start();
 
 	void stop();
-
-	void reset();
-
-	void remove();
-
-	void shutdown();
 
 	void resume();
 

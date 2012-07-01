@@ -1,0 +1,46 @@
+body {
+font-family: arial;
+font-size: 9pt;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 15px;
+	border-collapse:collapse;
+}
+
+table caption {
+	background: #a3b6ed;
+	padding: 4px;
+	color: black;
+	font-size: 12pt;
+	font-family: arial;
+	font-weight: bold;
+	text-align: left;
+	border: 1px solid black;
+	border-bottom: 0;
+}
+
+table th {
+	background: #dce5ff;
+	padding: 4px;
+	font-size: 10pt;
+	border: 1px solid black;
+	font-weight: bold;
+	text-align: left;
+}
+
+table td {
+	padding: 4px;
+	font-size: 10pt;
+	border: 1px solid black;
+	text-align: left;
+}
+
+a {
+	color: #c45e31;
+}
+
+a:hover {
+	color: black;
+}

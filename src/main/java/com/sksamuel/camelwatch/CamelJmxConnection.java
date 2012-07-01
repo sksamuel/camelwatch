@@ -1,7 +1,6 @@
 package com.sksamuel.camelwatch;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +35,18 @@ public class CamelJmxConnection implements CamelConnection {
 
 	}
 
+	Set<ObjectInstance> getBeansOfType(String type) throws IOException, MalformedObjectNameException {
+		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",*"), null);
+		return beans;
+	}
+
+	@Override
+	public ConsumerOperations getConsumerOperations(String consumerId) throws Exception {
+		ObjectInstance instance = getInstance("consumers", consumerId);
+		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
+		return new ConsumerOperationsJmxImpl(conn, instance, consumerId, info);
+	}
+
 	@Override
 	public List<Consumer> getConsumers() throws Exception {
 
@@ -46,6 +57,7 @@ public class CamelJmxConnection implements CamelConnection {
 			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
 			Consumer consumer = new ConsumerFactory().buildConsumer(instance, conn, info);
 			consumers.add(consumer);
+			break;
 		}
 
 		return consumers;
@@ -65,6 +77,26 @@ public class CamelJmxConnection implements CamelConnection {
 		return endpoints;
 	}
 
+	ObjectInstance getInstance(String type, String name) throws MalformedObjectNameException, NullPointerException, IOException {
+		Set<ObjectInstance> beans = conn
+				.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name=\"" + name + "\",*"), null);
+		return beans.isEmpty() ? null : beans.iterator().next();
+	}
+
+	@Override
+	public Route getRoute(String routeId) throws Exception {
+		ObjectInstance instance = getInstance("routes", routeId);
+		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
+		return new RouteFactory().buildRoute(instance, conn, info);
+	}
+
+	@Override
+	public RouteOperations getRouteOperations(String routeId) throws Exception {
+		ObjectInstance instance = getInstance("routes", routeId);
+		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
+		return new RouteOperationsJmxImpl(conn, instance, routeId, info);
+	}
+
 	@Override
 	public List<Route> getRoutes() throws Exception {
 
@@ -72,22 +104,13 @@ public class CamelJmxConnection implements CamelConnection {
 
 		List<Route> routes = Lists.newArrayList();
 		for (ObjectInstance instance : beans) {
-
-			System.out.println(instance.getObjectName());
 			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
-			System.out.println(Arrays.toString(info.getAttributes()));
-
 			Route route = new RouteFactory().buildRoute(instance, conn, info);
 			routes.add(route);
+			break;
 		}
 
 		return routes;
-	}
-
-	Set<ObjectInstance> getBeansOfType(String type) throws IOException, MalformedObjectNameException {
-		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",*"), null);
-		System.out.println(beans.size() + " beans");
-		return beans;
 	}
 
 }

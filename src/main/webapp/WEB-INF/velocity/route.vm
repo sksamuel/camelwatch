@@ -1,0 +1,68 @@
+#parse("header.vm")
+
+
+<table border="1" cellspacing="0" cellpadding="3">
+<caption>Route: $route.routeId</caption>
+<tr>
+	<td>Camel Id</td>
+	<td>$route.camelId</td>
+</tr>
+<tr>
+	<td>endpointUri</td>
+	<td>$route.endpointUri</td>
+</tr>
+<tr>
+	<td>Description</td>
+	<td>$route.Description</td>
+</tr>
+<tr>
+	<td>routePolicyList</td>
+	<td>$route.routePolicyList</td>
+</tr>
+<tr>
+	<td>lastExchangeCompletedExchangeId</td>
+	<td>$route.lastExchangeCompletedExchangeId</td>
+</tr>
+<tr>
+	<td>State</td>
+	<td>$route.state</td>
+</tr>
+</table>
+
+
+
+
+<table border="1" cellspacing="0" cellpadding="3">
+<caption>Statistics</caption>
+<tr>
+	<td>exchangesTotal</td>
+	<td>$route.exchangesTotal</td>
+</tr>
+<tr>
+	<td>routePolicyList</td>
+	<td>$route.routePolicyList</td>
+</tr>
+<tr>
+	<td>lastExchangeCompletedExchangeId</td>
+	<td>$route.lastExchangeCompletedExchangeId</td>
+</tr>
+<tr>
+	<td>exchangesTotal</td>
+	<td>$route.exchangesTotal</td>
+</tr>
+<tr>
+	<td>State</td>
+	<td>$route.state</td>
+</tr>
+<tr>
+	<td>failuresHandled</td>
+	<td>$route.failuresHandled</td>
+</tr>
+</table>
+
+
+
+
+
+
+#parse("footer.vm")

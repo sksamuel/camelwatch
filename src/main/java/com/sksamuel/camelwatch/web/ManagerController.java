@@ -22,7 +22,7 @@ public class ManagerController {
 	@Autowired
 	private CamelConnectionFactory	connectionFactory;
 
-	@RequestMapping("manager")
+	@RequestMapping("/")
 	public String list(ModelMap map) throws Exception {
 
 		CamelConnection conn = connectionFactory.getConnection();
@@ -33,6 +33,6 @@ public class ManagerController {
 		List<Consumer> consumers = conn.getConsumers();
 		map.put("consumers", consumers);
 
-		return "views/manager";
+		return "manager";
 	}
 }

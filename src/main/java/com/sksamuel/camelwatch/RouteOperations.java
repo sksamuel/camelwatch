@@ -8,9 +8,9 @@ public interface RouteOperations {
 
 	void setStatisticsEnabled(boolean enabled);
 
-	void start();
+	Object start() throws Exception;
 
-	void stop();
+	Object stop() throws Exception;
 
 	void reset();
 
