@@ -46,10 +46,10 @@
 #foreach ($consumer in $consumers)
 <tr>
 	<td>$consumer.camelId</td>
-	<td>$consumer.routeId</td>
+	<td><a href="consumer/$consumer.name">$consumer.routeId</a></td>
  	<td>$consumer.state</td>
  	<td class="row-center" bgcolor="#FFFFFF">$!consumer.inflightExchanges</td>
-	<td class="row-left" bgcolor="#FFFFFF" rowspan="2"><a href="consumer/$consumer.routeId/start">Start</a> <a href="consumer/$consumer.routeId/stop">Stop</a> <a href="consumer/$consumer.routeId/shutdown">Shutdown</a></td>
+	<td class="row-left" bgcolor="#FFFFFF" rowspan="2"><a href="consumer/$consumer.name/start">Start</a> <a href="consumer/$consumer.name/stop">Stop</a> <a href="consumer/$consumer.routeId/shutdown">Shutdown</a></td>
 </tr>
 <tr>
 	<td class="row-left" bgcolor="#FFFFFF" colspan="4">$consumer.endpointUri</td>

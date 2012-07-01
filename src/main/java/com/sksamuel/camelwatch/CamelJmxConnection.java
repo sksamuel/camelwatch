@@ -41,6 +41,13 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
+	public Consumer getConsumer(String consumerName) throws Exception {
+		ObjectInstance instance = getInstance("consumers", consumerName);
+		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
+		return new ConsumerFactory().buildConsumer(instance, conn, info);
+	}
+
+	@Override
 	public ConsumerOperations getConsumerOperations(String consumerId) throws Exception {
 		ObjectInstance instance = getInstance("consumers", consumerId);
 		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
@@ -77,21 +84,20 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	ObjectInstance getInstance(String type, String name) throws MalformedObjectNameException, NullPointerException, IOException {
-		Set<ObjectInstance> beans = conn
-				.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name=\"" + name + "\",*"), null);
+		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name=" + name + ",*"), null);
 		return beans.isEmpty() ? null : beans.iterator().next();
 	}
 
 	@Override
 	public Route getRoute(String routeId) throws Exception {
-		ObjectInstance instance = getInstance("routes", routeId);
+		ObjectInstance instance = getInstance("routes", "\"" + routeId + "\"");
 		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
 		return new RouteFactory().buildRoute(instance, conn, info);
 	}
 
 	@Override
 	public RouteOperations getRouteOperations(String routeId) throws Exception {
-		ObjectInstance instance = getInstance("routes", routeId);
+		ObjectInstance instance = getInstance("routes", "\"" + routeId + "\"");
 		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
 		return new RouteOperationsJmxImpl(conn, instance, routeId, info);
 	}

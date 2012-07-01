@@ -8,6 +8,10 @@ import java.util.List;
  */
 public interface CamelConnection {
 
+	Consumer getConsumer(String consumerId) throws Exception;
+
+	ConsumerOperations getConsumerOperations(String consumerId) throws Exception;
+
 	List<Consumer> getConsumers() throws Exception;
 
 	List<Endpoint> getEndpoints() throws Exception;
@@ -17,7 +21,5 @@ public interface CamelConnection {
 	RouteOperations getRouteOperations(String routeId) throws Exception;
 
 	List<Route> getRoutes() throws Exception;
-
-	ConsumerOperations getConsumerOperations(String consumerId) throws Exception;
 
 }

@@ -20,6 +20,8 @@ public class ConsumerFactory {
 
 		MBeanAttributeInfo[] attributes = info.getAttributes();
 		Consumer c = new Consumer();
+		c.setName(instance.getObjectName().getKeyProperty("name"));
+		c.setDescription(info.getDescription());
 		MBeanUtils.populateAttributesOnFields(conn, instance, attributes, c);
 		return c;
 	}

@@ -13,7 +13,7 @@
 </tr>
 <tr>
 	<td>Description</td>
-	<td>$route.Description</td>
+	<td>$route.description</td>
 </tr>
 <tr>
 	<td>routePolicyList</td>

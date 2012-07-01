@@ -1,6 +1,5 @@
 package com.sksamuel.camelwatch;
 
-
 /**
  * @author Stephen K Samuel samspade79@gmail.com 1 Jul 2012 17:14:58
  * 
@@ -18,6 +17,8 @@ public class Consumer {
 	private boolean	suspended;
 	private String	timeUnit;
 	private boolean	useFixedDelay;
+	private String	name;
+	private String	description;
 
 	public String getCamelId() {
 		return camelId;
@@ -27,16 +28,24 @@ public class Consumer {
 		return delay;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
 	public String getEndpointUri() {
 		return endpointUri;
+	}
+
+	public long getInflightExchanges() {
+		return inflightExchanges;
 	}
 
 	public long getInitialDelay() {
 		return initialDelay;
 	}
 
-	public long getInflightExchanges() {
-		return inflightExchanges;
+	public String getName() {
+		return name;
 	}
 
 	public String getRouteId() {
@@ -71,16 +80,24 @@ public class Consumer {
 		this.delay = delay;
 	}
 
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public void setEndpointUri(String endpointUri) {
 		this.endpointUri = endpointUri;
+	}
+
+	public void setInflightExchanges(long inflightExchanges) {
+		this.inflightExchanges = inflightExchanges;
 	}
 
 	public void setInitialDelay(long inflightDelay) {
 		this.initialDelay = inflightDelay;
 	}
 
-	public void setInflightExchanges(long inflightExchanges) {
-		this.inflightExchanges = inflightExchanges;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setRouteId(String routeId) {
