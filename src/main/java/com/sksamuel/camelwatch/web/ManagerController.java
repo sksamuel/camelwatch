@@ -1,13 +1,6 @@
 package com.sksamuel.camelwatch.web;
 
-import java.io.IOException;
 import java.util.List;
-
-import javax.management.InstanceNotFoundException;
-import javax.management.IntrospectionException;
-import javax.management.MBeanException;
-import javax.management.MalformedObjectNameException;
-import javax.management.ReflectionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,13 +20,12 @@ import com.sksamuel.camelwatch.Route;
 public class ManagerController {
 
 	@Autowired
-	private CamelConnectionFactory	connector;
+	private CamelConnectionFactory	connectionFactory;
 
 	@RequestMapping("manager")
-	public String list(ModelMap map) throws InstanceNotFoundException, IntrospectionException, MalformedObjectNameException,
-			ReflectionException, NullPointerException, MBeanException, IOException {
+	public String list(ModelMap map) throws Exception {
 
-		CamelConnection conn = connector.getConnection();
+		CamelConnection conn = connectionFactory.getConnection();
 
 		List<Route> routes = conn.getRoutes();
 		map.put("routes", routes);

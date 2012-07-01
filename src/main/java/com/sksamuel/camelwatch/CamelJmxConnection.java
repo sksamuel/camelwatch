@@ -7,15 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.management.InstanceNotFoundException;
-import javax.management.IntrospectionException;
-import javax.management.MBeanException;
 import javax.management.MBeanInfo;
 import javax.management.MBeanServerConnection;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectInstance;
 import javax.management.ObjectName;
-import javax.management.ReflectionException;
 import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
@@ -41,8 +37,7 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
-	public List<Endpoint> getEndpoints() throws IOException, InstanceNotFoundException, IntrospectionException, ReflectionException,
-			MalformedObjectNameException, NullPointerException, MBeanException {
+	public List<Endpoint> getEndpoints() throws Exception {
 
 		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=routes,*"), null);
 		System.out.println(beans.size() + " beans");
@@ -61,8 +56,7 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
-	public List<Route> getRoutes() throws IOException, InstanceNotFoundException, IntrospectionException, ReflectionException,
-			MalformedObjectNameException, NullPointerException, MBeanException {
+	public List<Route> getRoutes() throws Exception {
 
 		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=routes,*"), null);
 		System.out.println(beans.size() + " beans");
@@ -74,7 +68,7 @@ public class CamelJmxConnection implements CamelConnection {
 			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
 			System.out.println(Arrays.toString(info.getAttributes()));
 
-			Route route = RouteFactory.buildRoute(instance, conn, info);
+			Route route = new RouteFactory().buildRoute(instance, conn, info);
 			routes.add(route);
 		}
 
