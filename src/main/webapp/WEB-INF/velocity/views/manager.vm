@@ -1,0 +1,39 @@
+#foreach ($route in $routes) 
+$route
+#end
+
+
+<table border="1" cellspacing="0" cellpadding="3">
+<tr>
+ <td colspan="6" class="title">Applications</td>
+</tr>
+<tr>
+ <td class="header-left">Name</td>
+ <td class="header-left">Version</td>
+ <td class="header-center">Display Name</td>
+ <td class="header-center">Running</td>
+ <td class="header-left">Sessions</td>
+ <td class="header-left">Commands</td>
+</tr>
+<tr>
+ <td class="row-left" bgcolor="#FFFFFF"></td>
+ <td class="row-left" bgcolor="#FFFFFF"><i>None specified</i></td>
+ <td class="row-left" bgcolor="#FFFFFF">Welcome to Tomcat</td>
+ <td class="row-center" bgcolor="#FFFFFF">true</td>
+ <td class="row-center" bgcolor="#FFFFFF"><a href="/manager/html/sessions?path=/&amp;org.apache.catalina.filters.CSRF_NONCE=E7406538872F29FDD71F80F44DFE83CF">0</a></td>
+ <td class="row-left" bgcolor="#FFFFFF">
+  &nbsp;Start&nbsp;
+  <form class="inline" method="POST" action="/manager/html/stop?path=/&amp;org.apache.catalina.filters.CSRF_NONCE=E7406538872F29FDD71F80F44DFE83CF">  <input type="submit" value="Stop">  </form>
+  <form class="inline" method="POST" action="/manager/html/reload?path=/&amp;org.apache.catalina.filters.CSRF_NONCE=E7406538872F29FDD71F80F44DFE83CF">  <input type="submit" value="Reload">  </form>
+  <form class="inline" method="POST" action="/manager/html/undeploy?path=/&amp;org.apache.catalina.filters.CSRF_NONCE=E7406538872F29FDD71F80F44DFE83CF">  <input type="submit" value="Undeploy">  </form>
+ </td>
+ </tr><tr>
+ <td class="row-left" bgcolor="#FFFFFF">
+  <form method="POST" action="/manager/html/expire?path=/&amp;org.apache.catalina.filters.CSRF_NONCE=E7406538872F29FDD71F80F44DFE83CF">
+  
+  &nbsp;<input type="submit" value="Expire sessions">&nbsp;with idle =&nbsp;<input type="text" name="idle" size="5" value="30">&nbsp;minutes&nbsp;
+  
+  </form>
+ </td>
+</tr>
+</table>

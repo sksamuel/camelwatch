@@ -24,12 +24,12 @@ import com.sksamuel.camelwatch.Route;
  * 
  */
 @Controller
-public class RouteController {
+public class ManagerController {
 
 	@Autowired
 	private CamelConnectionFactory	connector;
 
-	@RequestMapping("list")
+	@RequestMapping("manager")
 	public String list(ModelMap map) throws InstanceNotFoundException, IntrospectionException, MalformedObjectNameException,
 			ReflectionException, NullPointerException, MBeanException, IOException {
 
@@ -41,6 +41,6 @@ public class RouteController {
 		List<Endpoint> endpoints = conn.getEndpoints();
 		map.put("endpoints", endpoints);
 
-		return "overview";
+		return "views/manager";
 	}
 }

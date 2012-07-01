@@ -7,10 +7,12 @@
 
 	<display-name>Camel-Watch</display-name>
 	<description>Apache Camel Monitoring Suite</description>
+
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring-web-context.xml</param-value>

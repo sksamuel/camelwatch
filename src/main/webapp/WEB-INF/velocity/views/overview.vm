@@ -1,3 +1,0 @@
-#foreach ($route in $routes) 
-$route
-#end
