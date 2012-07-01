@@ -12,4 +12,6 @@ public interface CamelConnection {
 
 	List<Endpoint> getEndpoints() throws Exception;
 
+	List<Consumer> getConsumers() throws Exception;
+
 }

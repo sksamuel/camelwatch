@@ -12,15 +12,15 @@ import org.slf4j.LoggerFactory;
  * @author Stephen K Samuel samspade79@gmail.com 29 Jun 2012 00:44:41
  * 
  */
-public class RouteFactory {
+public class ConsumerFactory {
 
-	private static final Logger	logger	= LoggerFactory.getLogger(RouteFactory.class);
+	private static final Logger	logger	= LoggerFactory.getLogger(ConsumerFactory.class);
 
-	public Route buildRoute(ObjectInstance instance, MBeanServerConnection conn, MBeanInfo info) throws Exception {
+	public Consumer buildConsumer(ObjectInstance instance, MBeanServerConnection conn, MBeanInfo info) throws Exception {
 
 		MBeanAttributeInfo[] attributes = info.getAttributes();
-		Route route = new Route();
-		MBeanUtils.populateAttributesOnFields(conn, instance, attributes, route);
-		return route;
+		Consumer c = new Consumer();
+		MBeanUtils.populateAttributesOnFields(conn, instance, attributes, c);
+		return c;
 	}
 }

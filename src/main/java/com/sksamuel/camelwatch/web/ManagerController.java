@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sksamuel.camelwatch.CamelConnection;
 import com.sksamuel.camelwatch.CamelConnectionFactory;
-import com.sksamuel.camelwatch.Endpoint;
+import com.sksamuel.camelwatch.Consumer;
 import com.sksamuel.camelwatch.Route;
 
 /**
@@ -30,8 +30,8 @@ public class ManagerController {
 		List<Route> routes = conn.getRoutes();
 		map.put("routes", routes);
 
-		List<Endpoint> endpoints = conn.getEndpoints();
-		map.put("endpoints", endpoints);
+		List<Consumer> consumers = conn.getConsumers();
+		map.put("consumers", consumers);
 
 		return "views/manager";
 	}

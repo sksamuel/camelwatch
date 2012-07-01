@@ -37,18 +37,28 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
+	public List<Consumer> getConsumers() throws Exception {
+
+		Set<ObjectInstance> beans = getBeansOfType("consumers");
+
+		List<Consumer> consumers = Lists.newArrayList();
+		for (ObjectInstance instance : beans) {
+			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
+			Consumer consumer = new ConsumerFactory().buildConsumer(instance, conn, info);
+			consumers.add(consumer);
+		}
+
+		return consumers;
+	}
+
+	@Override
 	public List<Endpoint> getEndpoints() throws Exception {
 
-		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=routes,*"), null);
-		System.out.println(beans.size() + " beans");
+		Set<ObjectInstance> beans = getBeansOfType("endpoints");
 
 		List<Endpoint> endpoints = Lists.newArrayList();
 		for (ObjectInstance instance : beans) {
-
-			System.out.println(instance.getObjectName());
 			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
-			System.out.println(Arrays.toString(info.getAttributes()));
-
 			Endpoint endpoint = EndpointFactory.buildEndpoint(instance, conn, info);
 			endpoints.add(endpoint);
 		}
@@ -58,8 +68,7 @@ public class CamelJmxConnection implements CamelConnection {
 	@Override
 	public List<Route> getRoutes() throws Exception {
 
-		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=routes,*"), null);
-		System.out.println(beans.size() + " beans");
+		Set<ObjectInstance> beans = getBeansOfType("routes");
 
 		List<Route> routes = Lists.newArrayList();
 		for (ObjectInstance instance : beans) {
@@ -73,6 +82,12 @@ public class CamelJmxConnection implements CamelConnection {
 		}
 
 		return routes;
+	}
+
+	Set<ObjectInstance> getBeansOfType(String type) throws IOException, MalformedObjectNameException {
+		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",*"), null);
+		System.out.println(beans.size() + " beans");
+		return beans;
 	}
 
 }
