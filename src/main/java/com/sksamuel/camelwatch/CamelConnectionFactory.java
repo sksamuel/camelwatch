@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CamelConnectionFactory {
 
-	@Value("jmx.endpoint")
+	@Value("${jmx.endpoint}")
 	private String	endpoint;
 
 	public CamelConnection getConnection() throws MalformedObjectNameException, NullPointerException, IOException {
