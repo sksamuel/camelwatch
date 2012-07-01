@@ -57,7 +57,6 @@ public class CamelJmxConnection implements CamelConnection {
 			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
 			Consumer consumer = new ConsumerFactory().buildConsumer(instance, conn, info);
 			consumers.add(consumer);
-			break;
 		}
 
 		return consumers;
@@ -107,7 +106,6 @@ public class CamelJmxConnection implements CamelConnection {
 			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
 			Route route = new RouteFactory().buildRoute(instance, conn, info);
 			routes.add(route);
-			break;
 		}
 
 		return routes;
