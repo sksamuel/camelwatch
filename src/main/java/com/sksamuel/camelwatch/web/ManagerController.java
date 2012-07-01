@@ -26,6 +26,8 @@ public class ManagerController {
 		map.put("routes", conn.getRoutes());
 		map.put("consumers", conn.getConsumers());
 		map.put("contexts", conn.getContexts());
+		map.put("endpoints", conn.getEndpoints());
+		map.put("errorhandlers", conn.getErrorHandlers());
 
 		return "manager";
 	}

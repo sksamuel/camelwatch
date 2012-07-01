@@ -1,0 +1,18 @@
+#parse("header.vm")
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Error Handler: $errorHandler.name</caption>
+
+#foreach ($entry in $errorHandler.properties.entrySet())
+<tr>
+	<td>$entry.key</td>
+	<td>$entry.value</td>
+</tr>
+#end
+
+</table>
+
+
+
+#parse("footer.vm")

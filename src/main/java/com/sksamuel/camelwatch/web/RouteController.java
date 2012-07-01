@@ -79,7 +79,7 @@ public class RouteController {
 		CamelConnection conn = connectionFactory.getConnection();
 		RouteOperations routeOps = conn.getRouteOperations(routeId);
 		routeOps.start();
-		map.put("message", "Route '" + routeId + "' started");
+		map.put("message", "ErrorHandler '" + routeId + "' started");
 		return getRedirect(routeId);
 	}
 
@@ -88,7 +88,7 @@ public class RouteController {
 		CamelConnection conn = connectionFactory.getConnection();
 		RouteOperations routeOps = conn.getRouteOperations(routeId);
 		routeOps.stop();
-		map.put("message", "Route '" + routeId + "' stopped");
+		map.put("message", "ErrorHandler '" + routeId + "' stopped");
 		return getRedirect(routeId);
 	}
 

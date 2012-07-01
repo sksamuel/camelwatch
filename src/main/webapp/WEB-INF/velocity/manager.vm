@@ -18,12 +18,12 @@
 
 #foreach ($context in $contexts)
 <tr>
-	<td>$context.camelId</td>
-	<td>$context.camelVersion</td>
- 	<td>$context.state</td>
- 	<td>$!context.inflightExchanges</td>
- 	<td>$context.load01 $context.load05 $context.load15</td>
-	<td>$context.uptime</td>
+	<td>$context.properties.CamelId</td>
+	<td>$context.properties.CamelVersion</td>
+ 	<td>$context.properties.State</td>
+ 	<td>$!context.properties.InflightExchanges</td>
+ 	<td>$context.properties.Load01 $context.properties.Load05 $context.properties.Load15</td>
+	<td>$context.properties.Uptime</td>
 </tr>
 #end
 </table>
@@ -35,8 +35,8 @@
  <th>Camel Id</th>
  <th>Route Id</th>
  <th>State</th>
- <th>Last Completion Time</th>
- <th>Last Failure Time</th>
+ <th>Last Completed</th>
+ <th>Last Failure</th>
  <th>Inflight</th>
  <th>Load</th>
  <th>Commands</th>
@@ -47,10 +47,10 @@
 	<td>$route.camelId</td>
 	<td><a href="route/$route.routeId">$route.routeId</a></td>
  	<td>$route.state</td>
-	<td>$!route.lastExchangeCompletedTimestamp</td>
-	<td>$!route.lastExchangeFailureTimestamp</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.lastExchangeCompletedTimestamp)</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.lastExchangeFailureTimestamp)</td>
  	<td>$!route.inflightExchanges</td>
- 	<td>$!route.load01 $route.load05 $route.load15</td>
+ 	<td>$!route.load01 / $!route.load05 / $!route.load15</td>
 	<td><a href="route/$route.routeId/start">Start</a> <a href="route/$route.routeId/stop">Stop</a></td>
 </tr>
 #end
@@ -62,8 +62,8 @@
 <table cellspacing="0" cellpadding="3">
 <caption>Consumers</caption>
 <tr>
- <th>CamelId</th>
- <th>RouteId</th>
+ <th>Camel Id</th>
+ <th>Route Id</th>
  <th>State</th>
  <th>Inflight</th>
  <th>Commands</th>
@@ -73,15 +73,59 @@
 	<td>$consumer.camelId</td>
 	<td><a href="consumer/$consumer.name">$consumer.routeId</a></td>
  	<td>$consumer.state</td>
- 	<td class="row-center" bgcolor="#FFFFFF">$!consumer.inflightExchanges</td>
-	<td class="row-left" bgcolor="#FFFFFF" rowspan="2"><a href="consumer/$consumer.name/start">Start</a> <a href="consumer/$consumer.name/stop">Stop</a> <a href="consumer/$consumer.routeId/shutdown">Shutdown</a></td>
+ 	<td>$!consumer.inflightExchanges</td>
+	<td rowspan="2"><a href="consumer/$consumer.name/start">Start</a> <a href="consumer/$consumer.name/stop">Stop</a></td>
 </tr>
 <tr>
-	<td class="row-left" bgcolor="#FFFFFF" colspan="4">$consumer.endpointUri</td>
-
+	<td colspan="4">$consumer.endpointUri</td>
 </tr>
 #end
 </table>
 
+
+
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Endpoints</caption>
+<tr>
+ <th>Camel Id</th>
+ <th>State</th>
+ <th>Singleton</th>
+</tr>
+#foreach ($endpoint in $endpoints)
+<tr>
+	<td>$!endpoint.properties.CamelId</td>
+ 	<td>$!endpoint.properties.State</td>
+ 	<td>$!endpoint.properties.Singleton</td>
+</tr>
+<tr>
+	<td colspan="4">$endpoint.properties.EndpointUri</td>
+</tr>
+#end
+</table>
+
+
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Error Handlers</caption>
+<tr>
+ <th>Camel Id</th>
+ <th>Name</th>
+ <th>Support Redelivery</th>
+ <th>Maximum Redeliveries</th>
+ <th>Dead Letter Channel</th>
+</tr>
+#foreach ($errorhandler in $errorhandlers)
+<tr>
+	<td>$errorhandler.properties.CamelId</td>
+	<td><a href="errorHandler/$errorhandler.name">$errorhandler.name</a></td>
+	<td>$errorhandler.properties.SupportRedelivery</td>
+ 	<td>$errorhandler.properties.MaximumRedeliveries</td>
+ 	<td>$errorhandler.properties.DeadLetterChannel</td>
+</tr>
+#end
+</table>
 
 #parse("footer.vm")

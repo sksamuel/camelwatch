@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.sksamuel.camelwatch.consumer.Consumer;
 import com.sksamuel.camelwatch.consumer.ConsumerOperations;
-import com.sksamuel.camelwatch.context.Context;
 import com.sksamuel.camelwatch.route.Route;
 import com.sksamuel.camelwatch.route.RouteOperations;
 
@@ -20,9 +19,13 @@ public interface CamelConnection {
 
 	List<Consumer> getConsumers() throws Exception;
 
-	List<Context> getContexts() throws Exception;
+	List<CamelBean> getContexts() throws Exception;
 
-	List<Endpoint> getEndpoints() throws Exception;
+	List<CamelBean> getEndpoints() throws Exception;
+
+	CamelBean getErrorHandler(String errorHandlerName) throws Exception;
+
+	List<CamelBean> getErrorHandlers() throws Exception;
 
 	Route getRoute(String routeId) throws Exception;
 
