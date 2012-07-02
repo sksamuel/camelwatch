@@ -46,3 +46,8 @@ Roadmap
 * Service bean views
 * Configure routes at runtime (like the camel web console)
 * More... please add issues to the issue tracker
+ 
+Screenshot
+==========
+
+<img src="https://github.com/downloads/sksamuel/camelwatch/ss1.png"/> <img src="https://github.com/downloads/sksamuel/camelwatch/ss2.png"/>
