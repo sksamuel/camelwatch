@@ -2,6 +2,8 @@ package com.sksamuel.camelwatch;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -183,7 +185,17 @@ public class CamelJmxConnection implements CamelConnection {
 
 	@Override
 	public List<CamelBean> getRoutes() throws Exception {
-		return getCamelBeans("routes");
+		List<CamelBean> routes = getCamelBeans("routes");
+		Collections.sort(routes, new Comparator<CamelBean>() {
+
+			@Override
+			public int compare(CamelBean o1, CamelBean o2) {
+				String routeId1 = (String) o1.getProperties().get("RouteId");
+				String routeId2 = (String) o2.getProperties().get("RouteId");
+				return routeId1.compareTo(routeId2);
+			}
+		});
+		return routes;
 	}
 
 	@Override
