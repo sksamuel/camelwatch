@@ -22,18 +22,18 @@ Rest
 
 Camelwatch includes a set of REST services. These are accessible at the following URLs, where contextPath should be replaced with your deployed app name (usually camelwatch)
 
-* /<contextPath>/rest/consumer
-* /<contextPath>/rest/consumer/{consumerName}
-* /<contextPath>/rest/context
-* /<contextPath>/rest/context/{contextName}
-* /<contextPath>/rest/endpoint
-* /<contextPath>/rest/endpoint/{endpointName}
-* /<contextPath>/rest/route
-* /<contextPath>/rest/route/{routeName}
-* /<contextPath>/rest/errorHandler
-* /<contextPath>/rest/errorHandler/{errorHandlerName}
-* /<contextPath>/rest/processor
-* /<contextPath>/rest/processor/{processorName}
+* /contextPath/rest/consumer
+* /contextPath/rest/consumer/{consumerName}
+* /contextPath/rest/context
+* /contextPath/rest/context/{contextName}
+* /contextPath/rest/endpoint
+* /contextPath/rest/endpoint/{endpointName}
+* /contextPath/rest/route
+* /contextPath/rest/route/{routeName}
+* /contextPath/rest/errorHandler
+* /contextPath/rest/errorHandler/{errorHandlerName}
+* /contextPath/rest/processor
+* /contextPath/rest/processor/{processorName}
 
 Roadmap
 =======
