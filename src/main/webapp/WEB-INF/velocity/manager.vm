@@ -29,5 +29,22 @@
 </table>
 
 
+<table cellspacing="0" cellpadding="3">
+<caption>Components</caption>
+<tr>
+ <th>Camel Id</th>
+ <th>Component Name</th>
+ <th>State</th>
+</tr>
+
+#foreach ($component in $components)
+<tr>
+	<td>$component.properties.CamelId</td>
+	<td>$component.properties.ComponentName</td>
+ 	<td>$component.properties.State</td>
+</tr>
+#end
+</table>
+
 
 #parse("footer.vm")

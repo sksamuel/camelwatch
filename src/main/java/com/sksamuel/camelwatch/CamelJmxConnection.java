@@ -103,6 +103,16 @@ public class CamelJmxConnection implements CamelConnection {
 		return getCamelBeans("errorhandlers");
 	}
 
+	@Override
+	public CamelBean getComponent(String componentName) throws Exception {
+		return getCamelBean("components", "\"" + componentName + "\"");
+	}
+
+	@Override
+	public List<CamelBean> getComponents() throws Exception {
+		return getCamelBeans("components");
+	}
+
 	ObjectInstance getObjectInstance(String type, String name) throws MalformedObjectNameException, NullPointerException, IOException {
 		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name=" + name + ",*"), null);
 		return beans.isEmpty() ? null : beans.iterator().next();

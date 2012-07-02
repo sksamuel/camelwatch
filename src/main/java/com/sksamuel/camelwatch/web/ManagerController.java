@@ -24,6 +24,7 @@ public class ManagerController {
 
 		CamelConnection conn = connectionFactory.getConnection();
 		map.put("contexts", conn.getContexts());
+		map.put("components", conn.getComponents());
 		return "manager";
 	}
 

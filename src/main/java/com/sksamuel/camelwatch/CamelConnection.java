@@ -37,4 +37,8 @@ public interface CamelConnection {
 
 	List<CamelBean> getProcessors() throws Exception;
 
+	CamelBean getComponent(String componentName) throws Exception;
+
+	List<CamelBean> getComponents() throws Exception;
+
 }
