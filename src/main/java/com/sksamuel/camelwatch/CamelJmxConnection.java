@@ -24,8 +24,6 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
 import com.sksamuel.camelwatch.consumer.ConsumerOperations;
 import com.sksamuel.camelwatch.consumer.ConsumerOperationsJmxImpl;
-import com.sksamuel.camelwatch.route.Route;
-import com.sksamuel.camelwatch.route.RouteFactory;
 import com.sksamuel.camelwatch.route.RouteOperations;
 import com.sksamuel.camelwatch.route.RouteOperationsJmxImpl;
 
@@ -141,10 +139,8 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
-	public Route getRoute(String routeId) throws Exception {
-		ObjectInstance instance = getObjectInstance("routes", "\"" + routeId + "\"");
-		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
-		return new RouteFactory().buildRoute(instance, conn, info);
+	public CamelBean getRoute(String routeId) throws Exception {
+		return getCamelBean("routes", routeId);
 	}
 
 	@Override
@@ -155,18 +151,8 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
-	public List<Route> getRoutes() throws Exception {
-
-		Set<ObjectInstance> beans = getObjectInstances("routes");
-
-		List<Route> routes = Lists.newArrayList();
-		for (ObjectInstance instance : beans) {
-			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
-			Route route = new RouteFactory().buildRoute(instance, conn, info);
-			routes.add(route);
-		}
-
-		return routes;
+	public List<CamelBean> getRoutes() throws Exception {
+		return getCamelBeans("routes");
 	}
 
 }

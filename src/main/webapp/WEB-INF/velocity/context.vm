@@ -18,13 +18,13 @@
 
 #foreach ($route in $routes)
 <tr>
-	<td><a href="#springUrl("/route/$route.routeId")">$route.routeId</a></td>
- 	<td>$route.state</td>
-	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.lastExchangeCompletedTimestamp)</td>
-	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.lastExchangeFailureTimestamp)</td>
- 	<td>$!route.inflightExchanges</td>
- 	<td>$!route.load01 / $!route.load05 / $!route.load15</td>
-	<td><a href="#springUrl("/route/$route.routeId/start")">Start</a> <a href="#springUrl("/route/$route.routeId/stop")">Stop</a></td>
+	<td><a href="#springUrl("/route/$route.RouteId")">$route.properties.RouteId</a></td>
+ 	<td>$route.properties.State</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.properties.LastExchangeCompletedTimestamp)</td>
+	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.properties.LastExchangeFailureTimestamp)</td>
+ 	<td>$!route.properties.InflightExchanges</td>
+ 	<td>$!route.properties.Load01 / $!route.properties.Load05 / $!route.properties.Load15</td>
+	<td><a href="#springUrl("/route/$route.properties.RouteId/start")">Start</a> <a href="#springUrl("/route/$route.properties.RouteId/stop")">Stop</a></td>
 </tr>
 #end
 </table>
