@@ -22,7 +22,6 @@ import javax.management.remote.JMXServiceURL;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.sksamuel.camelwatch.consumer.ConsumerOperations;
 import com.sksamuel.camelwatch.consumer.ConsumerOperationsJmxImpl;
 import com.sksamuel.camelwatch.route.RouteOperations;
@@ -34,10 +33,12 @@ import com.sksamuel.camelwatch.route.RouteOperationsJmxImpl;
  */
 public class CamelJmxConnection implements CamelConnection {
 
-	private final MBeanServerConnection			conn;
-	private static final Map<ObjectName, MBeanInfo>	beanInfos	= Maps.newHashMap();
+	private final MBeanServerConnection		conn;
+	private final Map<ObjectName, MBeanInfo>	beanInfoCache;
 
-	public CamelJmxConnection(String url) throws IOException, MalformedObjectNameException, NullPointerException {
+	public CamelJmxConnection(String url, Map<ObjectName, MBeanInfo> beanInfoCache) throws IOException,
+			MalformedObjectNameException, NullPointerException {
+		this.beanInfoCache = beanInfoCache;
 		Map<String, String[]> env = new HashMap<String, String[]>();
 		env.put(JMXConnector.CREDENTIALS, new String[] { "user", "pass" });
 
@@ -49,10 +50,10 @@ public class CamelJmxConnection implements CamelConnection {
 
 	MBeanInfo getBeanInfo(ObjectInstance instance) throws InstanceNotFoundException, IntrospectionException,
 			ReflectionException, IOException {
-		if (beanInfos.containsKey(instance.getObjectName()))
-			return beanInfos.get(instance.getObjectName());
+		if (beanInfoCache.containsKey(instance.getObjectName()))
+			return beanInfoCache.get(instance.getObjectName());
 		MBeanInfo mBeanInfo = conn.getMBeanInfo(instance.getObjectName());
-		beanInfos.put(instance.getObjectName(), mBeanInfo);
+		beanInfoCache.put(instance.getObjectName(), mBeanInfo);
 		return mBeanInfo;
 	}
 
