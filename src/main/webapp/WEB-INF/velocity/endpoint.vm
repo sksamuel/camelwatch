@@ -4,15 +4,49 @@
 <table cellspacing="0" cellpadding="3">
 <caption>Endpoint</caption>
 
+
 #foreach ($entry in $endpoint.properties.entrySet())
 <tr>
 	<td>$entry.key</td>
+	#if ($entry.key == "CamelId")
+	<td><a href="#springUrl("/context/$entry.value")">$entry.value</td>
+	#else
 	<td>$entry.value</td>
+	#end
 </tr>
 #end
 
 </table>
 
+
+<table cellspacing="0" cellpadding="3">
+<caption>Browse Messages</caption>
+
+<tr>
+	<td>Browse exchange by index</td>
+	<form method="POST" action="#springUrl("/endpoint/browseExchange")">
+	<input type="hidden" name="endpointName" value="$endpoint.name"/>
+	<td>Exchange index <input type="text"size="4" value="0" name="offset"/> <input type="submit" value="Get"/></td>
+	</form>
+</tr>
+
+<tr>
+	<td>Browse message body by index</td>
+	<form method="POST" action="#springUrl("/endpoint/browseMessageBody")">
+	<input type="hidden" name="endpointName" value="$endpoint.name"/>
+	<td>Exchange index <input type="text"size="4" value="0" name="offset"/> <input type="submit" value="Get"/></td>
+	</form>
+</tr>
+
+<tr>
+	<td>Browse message as XML</td>
+	<form method="POST" action="#springUrl("/endpoint/browseMessageAsXml")">
+	<input type="hidden" name="endpointName" value="$endpoint.name"/>
+	<td>Exchange index <input type="text"size="4" value="0" name="offset"/> <input type="submit" value="Get"/></td>
+	</form>
+</tr>
+
+</table>
 
 
 #parse("footer.vm")

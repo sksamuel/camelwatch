@@ -27,6 +27,8 @@ public class GlobalModelAttributesInterceptor extends HandlerInterceptorAdapter 
 			HttpServletResponse response,
 			Object handler,
 			ModelAndView modelAndView) throws Exception {
+		if (modelAndView == null)
+			return;
 		modelAndView.getModel().put("urlResolver", urlResolver);
 	}
 

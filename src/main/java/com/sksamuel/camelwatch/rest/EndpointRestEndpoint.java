@@ -25,7 +25,7 @@ public class EndpointRestEndpoint {
 	@RequestMapping(value = "/rest/endpoint", method = RequestMethod.GET)
 	@ResponseBody
 	public List<CamelBean> getConsumer() throws Exception {
-		return connectionFactory.getConnection().getContexts();
+		return connectionFactory.getConnection().getEndpoints();
 	}
 
 	@RequestMapping(value = "/rest/endpoint/{endpointName}", method = RequestMethod.GET)

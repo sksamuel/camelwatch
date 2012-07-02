@@ -24,6 +24,8 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
 import com.sksamuel.camelwatch.consumer.ConsumerOperations;
 import com.sksamuel.camelwatch.consumer.ConsumerOperationsJmxImpl;
+import com.sksamuel.camelwatch.endpoint.EndpointOperations;
+import com.sksamuel.camelwatch.endpoint.EndpointOperationsJmxImpl;
 import com.sksamuel.camelwatch.route.RouteOperations;
 import com.sksamuel.camelwatch.route.RouteOperationsJmxImpl;
 
@@ -184,4 +186,10 @@ public class CamelJmxConnection implements CamelConnection {
 		return getCamelBeans("routes");
 	}
 
+	@Override
+	public EndpointOperations getEndpointOperations(String endpointName) throws Exception {
+		ObjectInstance instance = getObjectInstance("endpoints", "\"" + endpointName + "\"");
+		MBeanInfo info = getBeanInfo(instance);
+		return new EndpointOperationsJmxImpl(conn, instance, endpointName, info);
+	}
 }

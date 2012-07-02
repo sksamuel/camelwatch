@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 
 import com.sksamuel.camelwatch.consumer.ConsumerOperations;
+import com.sksamuel.camelwatch.endpoint.EndpointOperations;
 import com.sksamuel.camelwatch.route.RouteOperations;
 
 /**
@@ -28,11 +29,15 @@ public interface CamelConnection {
 
 	CamelBean getEndpoint(String endpointName) throws Exception;
 
+	EndpointOperations getEndpointOperations(String endpointName) throws Exception;
+
 	List<CamelBean> getEndpoints() throws Exception;
 
 	CamelBean getErrorHandler(String errorHandlerName) throws Exception;
 
 	List<CamelBean> getErrorHandlers() throws Exception;
+
+	CamelBean getProcessor(String processorId) throws Exception;
 
 	List<CamelBean> getProcessors() throws Exception;
 
@@ -43,7 +48,5 @@ public interface CamelConnection {
 	RouteOperations getRouteOperations(String routeId) throws Exception;
 
 	List<CamelBean> getRoutes() throws Exception;
-
-	CamelBean getProcessor(String processorId) throws Exception;
 
 }
