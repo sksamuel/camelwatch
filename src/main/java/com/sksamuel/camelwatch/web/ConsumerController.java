@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sksamuel.camelwatch.CamelBean;
 import com.sksamuel.camelwatch.CamelConnection;
 import com.sksamuel.camelwatch.CamelConnectionFactory;
-import com.sksamuel.camelwatch.consumer.Consumer;
 import com.sksamuel.camelwatch.consumer.ConsumerOperations;
 
 /**
@@ -32,7 +32,7 @@ public class ConsumerController {
 			ModelMap map,
 			@RequestParam(value = "message", required = false) String message) throws Exception {
 		CamelConnection conn = connectionFactory.getConnection();
-		Consumer consumer = conn.getConsumer(consumerName);
+		CamelBean consumer = conn.getConsumer(consumerName);
 		map.put("consumer", consumer);
 		map.put("message", message);
 		return "consumer";

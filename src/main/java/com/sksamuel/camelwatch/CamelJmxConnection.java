@@ -22,8 +22,6 @@ import javax.management.remote.JMXServiceURL;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
-import com.sksamuel.camelwatch.consumer.Consumer;
-import com.sksamuel.camelwatch.consumer.ConsumerFactory;
 import com.sksamuel.camelwatch.consumer.ConsumerOperations;
 import com.sksamuel.camelwatch.consumer.ConsumerOperationsJmxImpl;
 import com.sksamuel.camelwatch.route.Route;
@@ -69,27 +67,8 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
-	public Consumer getConsumer(String consumerName) throws Exception {
-		ObjectInstance instance = getObjectInstance("consumers", consumerName);
-		MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
-		return new ConsumerFactory().buildConsumer(instance, conn, info);
-	}
-
-	@Override
-	public List<CamelBean> getProcessors() throws Exception {
-		return getCamelBeans("processors");
-	}
-
-	@Override
-	public Collection<CamelBean> getProcessors(final String routeId) throws Exception {
-		List<CamelBean> camelBeans = getCamelBeans("processors");
-		return Collections2.filter(camelBeans, new Predicate<CamelBean>() {
-
-			@Override
-			public boolean apply(CamelBean input) {
-				return routeId.equals(input.getProperties().get("RouteId"));
-			}
-		});
+	public CamelBean getConsumer(String consumerName) throws Exception {
+		return getCamelBean("consumers", consumerName);
 	}
 
 	@Override
@@ -100,16 +79,8 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
-	public List<Consumer> getConsumers() throws Exception {
-		Set<ObjectInstance> beans = getObjectInstances("consumers");
-		List<Consumer> consumers = Lists.newArrayList();
-		for (ObjectInstance instance : beans) {
-			MBeanInfo info = conn.getMBeanInfo(instance.getObjectName());
-			Consumer consumer = new ConsumerFactory().buildConsumer(instance, conn, info);
-			consumers.add(consumer);
-		}
-
-		return consumers;
+	public List<CamelBean> getConsumers() throws Exception {
+		return getCamelBeans("consumers");
 	}
 
 	@Override
@@ -140,6 +111,23 @@ public class CamelJmxConnection implements CamelConnection {
 	Set<ObjectInstance> getObjectInstances(String type) throws IOException, MalformedObjectNameException {
 		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",*"), null);
 		return beans;
+	}
+
+	@Override
+	public List<CamelBean> getProcessors() throws Exception {
+		return getCamelBeans("processors");
+	}
+
+	@Override
+	public Collection<CamelBean> getProcessors(final String routeId) throws Exception {
+		List<CamelBean> camelBeans = getCamelBeans("processors");
+		return Collections2.filter(camelBeans, new Predicate<CamelBean>() {
+
+			@Override
+			public boolean apply(CamelBean input) {
+				return routeId.equals(input.getProperties().get("RouteId"));
+			}
+		});
 	}
 
 	@Override

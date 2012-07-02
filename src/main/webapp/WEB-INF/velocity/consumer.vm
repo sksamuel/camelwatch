@@ -2,31 +2,13 @@
 
 
 <table cellspacing="0" cellpadding="3">
-<caption>Consumer: $consumer.name</caption>
+<caption>Consumer</caption>
+#foreach ($entry in $consumer.properties.entrySet())
 <tr>
-	<td>Camel Id</td>
-	<td>$consumer.camelId</td>
+	<td>$entry.key</td>
+	<td>$entry.value</td>
 </tr>
-<tr>
-	<td>Route Id</td>
-	<td>$consumer.routeId</td>
-</tr>
-<tr>
-	<td>Endpoint Uri</td>
-	<td>$consumer.endpointUri</td>
-</tr>
-<tr>
-	<td>Description</td>
-	<td>$consumer.description</td>
-</tr>
-<tr>
-	<td>State</td>
-	<td>$consumer.state</td>
-</tr>
-<tr>
-	<td>Inflight Exchanges</td>
-	<td>$consumer.inflightExchanges</td>
-</tr>
+#end
 </table>
 
 
