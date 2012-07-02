@@ -35,7 +35,7 @@
 <table cellspacing="0" cellpadding="3">
 <caption>Consumers</caption>
 <tr>
- <th>Route Id</th>
+ <th>Name</th>
  <th>State</th>
  <th>Suspended</th>
  <th>Delay</th>
@@ -64,17 +64,22 @@
 <table cellspacing="0" cellpadding="3">
 <caption>Endpoints</caption>
 <tr>
+	<th>View</th>
+	<th>Endpoint URI</th>
  <th>State</th>
  <th>Singleton</th>
 </tr>
 #foreach ($endpoint in $endpoints)
 <tr>
+	<form method="POST" action="#springUrl("/endpoint")">
+	<input type="hidden" name="endpointName" value="$endpoint.name"/>
+	<td><input type="submit" value="View"/></td>
+	</form>
+	<td>$displaytool.truncate($endpoint.properties.EndpointUri, 150)</td>
  	<td>$!endpoint.properties.State</td>
  	<td>$!endpoint.properties.Singleton</td>
 </tr>
 <tr>
-	<td colspan="4">$endpoint.properties.EndpointUri</td>
-</tr>
 #end
 </table>
 
@@ -98,5 +103,8 @@
 </tr>
 #end
 </table>
+
+
+
 
 #parse("footer.vm")

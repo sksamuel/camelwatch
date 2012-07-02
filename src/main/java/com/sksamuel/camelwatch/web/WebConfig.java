@@ -2,6 +2,7 @@ package com.sksamuel.camelwatch.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -19,7 +20,10 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 @Configuration
 public class WebConfig extends WebMvcConfigurationSupport implements ApplicationListener<ContextRefreshedEvent> {
 
-	protected static final Logger	logger	= LoggerFactory.getLogger(WebConfig.class);
+	protected static final Logger			logger	= LoggerFactory.getLogger(WebConfig.class);
+
+	@Autowired
+	private GlobalModelAttributesInterceptor	globalModelAttributesInterceptor;
 
 	@Override
 	protected void addFormatters(FormatterRegistry registry) {
@@ -27,7 +31,7 @@ public class WebConfig extends WebMvcConfigurationSupport implements Application
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-
+		registry.addInterceptor(globalModelAttributesInterceptor);
 	}
 
 	@Override
