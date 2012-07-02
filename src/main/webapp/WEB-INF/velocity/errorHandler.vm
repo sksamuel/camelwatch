@@ -2,7 +2,7 @@
 
 
 <table cellspacing="0" cellpadding="3">
-<caption>Error Handler: $errorHandler.name</caption>
+<caption>Error Handler</caption>
 
 #foreach ($entry in $errorHandler.properties.entrySet())
 <tr>

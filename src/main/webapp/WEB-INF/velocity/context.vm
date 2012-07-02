@@ -18,7 +18,7 @@
 
 #foreach ($route in $routes)
 <tr>
-	<td><a href="#springUrl("/route/$route.RouteId")">$route.properties.RouteId</a></td>
+	<td><a href="#springUrl("/route/$route.properties.RouteId")">$route.properties.RouteId</a></td>
  	<td>$route.properties.State</td>
 	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.properties.LastExchangeCompletedTimestamp)</td>
 	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.properties.LastExchangeFailureTimestamp)</td>

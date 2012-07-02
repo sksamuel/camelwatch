@@ -3,48 +3,12 @@
 
 <table border="1" cellspacing="0" cellpadding="3">
 <caption>Route</caption>
+#foreach ($entry in $route.properties.entrySet())
 <tr>
-	<td>Camel Id</td>
-	<td>$route.camelId</td>
-</tr><tr>
-	<td>Route Id</td>
-	<td>$route.routeId</td>
+	<td>$entry.key</td>
+	<td>$!entry.value</td>
 </tr>
-<tr>
-	<td>Endpoint Uri</td>
-	<td>$route.endpointUri</td>
-</tr>
-<tr>
-	<td>Description</td>
-	<td>$route.description</td>
-</tr>
-<tr>
-	<td>Route Policy List</td>
-	<td>$route.routePolicyList</td>
-</tr>
-<tr>
-	<td>State</td>
-	<td>$route.state</td>
-</tr>
-</table>
-
-
-
-
-<table border="1" cellspacing="0" cellpadding="3">
-<caption>Statistics</caption>
-<tr>
-	<td>LastExchangeCompletedExchangeId</td>
-	<td>$route.lastExchangeCompletedExchangeId</td>
-</tr>
-<tr>
-	<td>ExchangesTotal</td>
-	<td>$route.exchangesTotal</td>
-</tr>
-<tr>
-	<td>FailuresHandled</td>
-	<td>$route.failuresHandled</td>
-</tr>
+#end
 </table>
 
 
