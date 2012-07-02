@@ -25,16 +25,43 @@
 		</property>
 	</bean>
 
+
+
 	<!-- View resolvers can also be configured with ResourceBundles or XML files. 
 		If you need different view resolving based on Locale, you have to use the 
 		resource bundle resolver. -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		<property name="order" value="2" />
 		<property name="cache" value="false" />
 		<property name="prefix" value="" />
 		<property name="suffix" value=".vm" />
 		<property name="toolboxConfigLocation" value="/WEB-INF/toolbox.xml" />
 		<property name="contentType" value="text/html; charset=UTF-8" />
+	</bean>
+
+
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+					<constructor-arg>
+						<bean class="org.springframework.oxm.xstream.XStreamMarshaller" />
+					</constructor-arg>
+				</bean>
+			</list>
+		</property>
+		<property name="ignoreAcceptHeader" value="true" />
 	</bean>
 
 	<mvc:default-servlet-handler />

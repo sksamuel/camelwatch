@@ -47,8 +47,8 @@ public class CamelJmxConnection implements CamelConnection {
 
 	}
 
-	MBeanInfo getBeanInfo(ObjectInstance instance) throws InstanceNotFoundException, IntrospectionException, ReflectionException,
-			IOException {
+	MBeanInfo getBeanInfo(ObjectInstance instance) throws InstanceNotFoundException, IntrospectionException,
+			ReflectionException, IOException {
 		if (beanInfos.containsKey(instance.getObjectName()))
 			return beanInfos.get(instance.getObjectName());
 		MBeanInfo mBeanInfo = conn.getMBeanInfo(instance.getObjectName());
@@ -63,8 +63,8 @@ public class CamelJmxConnection implements CamelConnection {
 		return bean;
 	}
 
-	List<CamelBean> getCamelBeans(String type) throws IOException, MalformedObjectNameException, InstanceNotFoundException,
-			IntrospectionException, ReflectionException, Exception {
+	List<CamelBean> getCamelBeans(String type) throws IOException, MalformedObjectNameException,
+			InstanceNotFoundException, IntrospectionException, ReflectionException, Exception {
 		Set<ObjectInstance> beans = getObjectInstances(type);
 		List<CamelBean> endpoints = Lists.newArrayList();
 		for (ObjectInstance instance : beans) {
@@ -103,8 +103,18 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
+	public CamelBean getContext(String camelId) throws Exception {
+		return getCamelBean("context", camelId);
+	}
+
+	@Override
 	public List<CamelBean> getContexts() throws Exception {
 		return getCamelBeans("context");
+	}
+
+	@Override
+	public CamelBean getEndpoint(String endpointName) throws Exception {
+		return getCamelBean("endpoints", "\"" + endpointName + "\"");
 	}
 
 	@Override
@@ -122,8 +132,10 @@ public class CamelJmxConnection implements CamelConnection {
 		return getCamelBeans("errorhandlers");
 	}
 
-	ObjectInstance getObjectInstance(String type, String name) throws MalformedObjectNameException, NullPointerException, IOException {
-		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name=" + name + ",*"), null);
+	ObjectInstance getObjectInstance(String type, String name) throws MalformedObjectNameException,
+			NullPointerException, IOException {
+		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name="
+				+ name + ",*"), null);
 		return beans.isEmpty() ? null : beans.iterator().next();
 	}
 

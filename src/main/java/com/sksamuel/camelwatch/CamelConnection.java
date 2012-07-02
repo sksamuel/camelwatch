@@ -12,13 +12,21 @@ import com.sksamuel.camelwatch.route.RouteOperations;
  */
 public interface CamelConnection {
 
+	CamelBean getComponent(String componentName) throws Exception;
+
+	List<CamelBean> getComponents() throws Exception;
+
 	CamelBean getConsumer(String consumerId) throws Exception;
 
 	ConsumerOperations getConsumerOperations(String consumerId) throws Exception;
 
 	List<CamelBean> getConsumers() throws Exception;
 
+	CamelBean getContext(String camelId) throws Exception;
+
 	List<CamelBean> getContexts() throws Exception;
+
+	CamelBean getEndpoint(String endpointName) throws Exception;
 
 	List<CamelBean> getEndpoints() throws Exception;
 
@@ -26,18 +34,14 @@ public interface CamelConnection {
 
 	List<CamelBean> getErrorHandlers() throws Exception;
 
+	List<CamelBean> getProcessors() throws Exception;
+
+	Collection<CamelBean> getProcessors(String routeId) throws Exception;
+
 	CamelBean getRoute(String routeId) throws Exception;
 
 	RouteOperations getRouteOperations(String routeId) throws Exception;
 
 	List<CamelBean> getRoutes() throws Exception;
-
-	Collection<CamelBean> getProcessors(String routeId) throws Exception;
-
-	List<CamelBean> getProcessors() throws Exception;
-
-	CamelBean getComponent(String componentName) throws Exception;
-
-	List<CamelBean> getComponents() throws Exception;
 
 }
