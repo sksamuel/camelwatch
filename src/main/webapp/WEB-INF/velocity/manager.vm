@@ -18,7 +18,7 @@
 
 #foreach ($context in $contexts)
 <tr>
-	<td><a href="context/$context.properties.CamelId">$context.properties.CamelId</a></td>
+	<td><a href="#springUrl("/context/$context.properties.CamelId")">$context.properties.CamelId</a></td>
 	<td>$context.properties.CamelVersion</td>
  	<td>$context.properties.State</td>
  	<td>$!context.properties.InflightExchanges</td>

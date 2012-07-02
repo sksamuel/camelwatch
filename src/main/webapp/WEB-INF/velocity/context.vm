@@ -24,7 +24,7 @@
 	<td>$!datetool.format("dd MMM yyyy HH:mm:ss", $route.properties.LastExchangeFailureTimestamp)</td>
  	<td>$!route.properties.InflightExchanges</td>
  	<td>$!route.properties.Load01 / $!route.properties.Load05 / $!route.properties.Load15</td>
-	<td><a href="#springUrl("/route/$route.properties.RouteId/start")">Start</a> <a href="#springUrl("/route/$route.properties.RouteId/stop")">Stop</a></td>
+	<td><a href="#springUrl("/route/$route.properties.RouteId/start")">Start</a> <a href="#springUrl("/route/$route.properties.RouteId/stop")">Stop</a> <a href="#springUrl("/route/$route.properties.RouteId/suspend")">Suspend</a> <a href="#springUrl("/route/$route.properties.RouteId/resume")">Resume</a></td>
 </tr>
 #end
 </table>
@@ -49,7 +49,7 @@
  	<td>$!consumer.properties.Suspended</td>
  	<td>$!consumer.properties.Delay</td>
  	<td>$!consumer.properties.InflightExchanges</td>
-	<td rowspan="2"><a href="consumer/$consumer.name/start">Start</a> <a href="consumer/$consumer.name/stop">Stop</a></td>
+	<td rowspan="2"><a href="#springUrl("/consumer/$consumer.name/start")">Start</a> <a href="#springUrl("/consumer/$consumer.name/stop")">Stop</a> <a href="#springUrl("/consumer/$consumer.name/suspend")">Suspend</a> <a href="#springUrl("/consumer/$consumer.name/resume")">Resume</a></td>
 </tr>
 <tr>
 	<td colspan="5">$consumer.properties.EndpointUri</td>

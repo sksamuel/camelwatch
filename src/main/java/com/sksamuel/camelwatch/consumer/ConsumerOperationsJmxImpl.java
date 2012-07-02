@@ -36,11 +36,15 @@ public class ConsumerOperationsJmxImpl implements ConsumerOperations {
 	}
 
 	@Override
-	public void resume() {
+	public Object resume() throws Exception {
+		Object result = conn.invoke(instance.getObjectName(), "resume", new Object[0], new String[0]);
+		return result;
 	}
 
 	@Override
-	public void suspend() {
+	public Object suspend() throws Exception {
+		Object result = conn.invoke(instance.getObjectName(), "suspend", new Object[0], new String[0]);
+		return result;
 	}
 
 }

@@ -38,6 +38,24 @@ public class ConsumerController {
 		return "consumer";
 	}
 
+	@RequestMapping("suspend")
+	public String suspend(@PathVariable("consumerName") String consumerName, ModelMap map) throws Exception {
+		CamelConnection conn = connectionFactory.getConnection();
+		ConsumerOperations ops = conn.getConsumerOperations(consumerName);
+		ops.suspend();
+		map.put("message", "Context '" + consumerName + "' suspended");
+		return getRedirect(consumerName);
+	}
+
+	@RequestMapping("resume")
+	public String resume(@PathVariable("consumerName") String consumerName, ModelMap map) throws Exception {
+		CamelConnection conn = connectionFactory.getConnection();
+		ConsumerOperations ops = conn.getConsumerOperations(consumerName);
+		ops.resume();
+		map.put("message", "Context '" + consumerName + "' resumed");
+		return getRedirect(consumerName);
+	}
+
 	@RequestMapping("start")
 	public String start(@PathVariable("consumerName") String consumerName, ModelMap map) throws Exception {
 		CamelConnection conn = connectionFactory.getConnection();

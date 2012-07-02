@@ -12,7 +12,7 @@ public interface ConsumerOperations {
 
 	Object stop() throws Exception;
 
-	void resume();
+	Object resume() throws Exception;
 
-	void suspend();
+	Object suspend() throws Exception;
 }
