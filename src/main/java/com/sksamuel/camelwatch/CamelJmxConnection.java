@@ -146,6 +146,11 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	@Override
+	public CamelBean getProcessor(String processorId) throws Exception {
+		return getCamelBean("processors", processorId);
+	}
+
+	@Override
 	public List<CamelBean> getProcessors() throws Exception {
 		return getCamelBeans("processors");
 	}

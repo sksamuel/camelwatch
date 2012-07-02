@@ -44,4 +44,6 @@ public interface CamelConnection {
 
 	List<CamelBean> getRoutes() throws Exception;
 
+	CamelBean getProcessor(String processorId) throws Exception;
+
 }
