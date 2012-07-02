@@ -8,9 +8,9 @@ public interface ConsumerOperations {
 
 	void setInitialDelay(long initialDelay);
 
-	void start();
+	Object start() throws Exception;
 
-	void stop();
+	Object stop() throws Exception;
 
 	void resume();
 

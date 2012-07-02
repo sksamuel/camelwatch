@@ -16,9 +16,7 @@ public interface RouteOperations {
 
 	void remove();
 
-	void shutdown();
+	Object resume() throws Exception;
 
-	void resume();
-
-	void suspend();
+	Object suspend() throws Exception;
 }

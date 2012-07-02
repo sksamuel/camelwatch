@@ -10,7 +10,13 @@ import javax.management.ObjectInstance;
  */
 public class ConsumerOperationsJmxImpl implements ConsumerOperations {
 
-	public ConsumerOperationsJmxImpl(MBeanServerConnection conn, ObjectInstance instance, String consumerId, MBeanInfo info) {
+	private final ObjectInstance		instance;
+	private final MBeanServerConnection	conn;
+
+	public ConsumerOperationsJmxImpl(MBeanServerConnection conn, ObjectInstance instance, String consumerId,
+			MBeanInfo info) {
+		this.conn = conn;
+		this.instance = instance;
 	}
 
 	@Override
@@ -18,11 +24,15 @@ public class ConsumerOperationsJmxImpl implements ConsumerOperations {
 	}
 
 	@Override
-	public void start() {
+	public Object start() throws Exception {
+		Object result = conn.invoke(instance.getObjectName(), "start", new Object[0], new String[0]);
+		return result;
 	}
 
 	@Override
-	public void stop() {
+	public Object stop() throws Exception {
+		Object result = conn.invoke(instance.getObjectName(), "stop", new Object[0], new String[0]);
+		return result;
 	}
 
 	@Override

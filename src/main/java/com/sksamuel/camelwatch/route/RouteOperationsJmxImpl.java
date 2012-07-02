@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.management.InstanceNotFoundException;
 import javax.management.IntrospectionException;
+import javax.management.MBeanException;
 import javax.management.MBeanInfo;
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectInstance;
@@ -37,15 +38,13 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 	}
 
 	@Override
-	public void resume() {
+	public Object resume() throws Exception {
+		Object result = conn.invoke(instance.getObjectName(), "resume", new Object[0], new String[0]);
+		return result;
 	}
 
 	@Override
 	public void setStatisticsEnabled(boolean enabled) {
-	}
-
-	@Override
-	public void shutdown() {
 	}
 
 	@Override
@@ -61,7 +60,9 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 	}
 
 	@Override
-	public void suspend() {
+	public Object suspend() Exception {
+		Object result = conn.invoke(instance.getObjectName(), "suspend", new Object[0], new String[0]);
+		return result;
 	}
 
 }
