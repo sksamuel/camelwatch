@@ -10,7 +10,7 @@ import com.google.common.collect.Maps;
  */
 public class CamelBean {
 
-	private final Map<String, Object>	properties	= Maps.newHashMap();
+	private final Map<String, Object>	properties	= Maps.newTreeMap();
 
 	private String				name;
 

@@ -87,7 +87,7 @@
 </tr>
 #foreach ($errorhandler in $errorhandlers)
 <tr>
-	<td><a href="errorHandler/$errorhandler.name">$errorhandler.name</a></td>
+	<td><a href="#springUrl("/errorHandler/$errorhandler.name")">$errorhandler.name</a></td>
 	<td>$errorhandler.properties.SupportRedelivery</td>
  	<td>$errorhandler.properties.MaximumRedeliveries</td>
  	<td>$errorhandler.properties.DeadLetterChannel</td>
