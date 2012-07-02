@@ -6,7 +6,11 @@
 #foreach ($entry in $route.properties.entrySet())
 <tr>
 	<td>$entry.key</td>
-	<td>$!entry.value</td>
+	#if ($entry.key == "CamelId")
+	<td><a href="#springUrl("/context/$entry.value")">$entry.value</td>
+	#else
+	<td>$entry.value</td>
+	#end
 </tr>
 #end
 </table>
