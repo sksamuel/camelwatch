@@ -5,7 +5,7 @@
 
 	<groupId>com.sksamuel</groupId>
 	<artifactId>camelwatch</artifactId>
-	<version>0.3</version>
+	<version>0.3-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<prerequisites>
