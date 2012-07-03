@@ -48,6 +48,14 @@
 
 
 
+<table cellspacing="0" cellpadding="3">
+<caption>Route XML</caption>
+<tr>
+	<td>$xml</td>
+</tr>
+</table>
+
+
 
 
 #parse("footer.vm")

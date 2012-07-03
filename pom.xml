@@ -132,13 +132,6 @@
 			<version>${jackson.version}</version>
 		</dependency>
 
-
-		<dependency>
-			<groupId>classloader</groupId>
-			<artifactId>classloader-leak-prevention</artifactId>
-			<version>${classloaderleak.version}</version>
-			<type>jar</type>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
