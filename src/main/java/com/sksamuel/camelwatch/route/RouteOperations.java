@@ -6,17 +6,19 @@ package com.sksamuel.camelwatch.route;
  */
 public interface RouteOperations {
 
-	void setStatisticsEnabled(boolean enabled);
-
-	Object start() throws Exception;
-
-	Object stop() throws Exception;
-
-	void reset();
+	String dumpRouteAsXml() throws Exception;
 
 	void remove();
 
-	Object resume() throws Exception;
+	void reset();
 
-	Object suspend() throws Exception;
+	void resume() throws Exception;
+
+	void setStatisticsEnabled(boolean enabled);
+
+	void start() throws Exception;
+
+	void stop() throws Exception;
+
+	void suspend() throws Exception;
 }

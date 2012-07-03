@@ -29,6 +29,11 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 	}
 
 	@Override
+	public String dumpRouteAsXml() throws Exception {
+		return (String) conn.invoke(instance.getObjectName(), "dumpRouteAsXml", new Object[0], new String[0]);
+	}
+
+	@Override
 	public void remove() {
 	}
 
@@ -37,9 +42,8 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 	}
 
 	@Override
-	public Object resume() throws Exception {
-		Object result = conn.invoke(instance.getObjectName(), "resume", new Object[0], new String[0]);
-		return result;
+	public void resume() throws Exception {
+		conn.invoke(instance.getObjectName(), "resume", new Object[0], new String[0]);
 	}
 
 	@Override
@@ -47,21 +51,18 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 	}
 
 	@Override
-	public Object start() throws Exception {
-		Object result = conn.invoke(instance.getObjectName(), "start", new Object[0], new String[0]);
-		return result;
+	public void start() throws Exception {
+		conn.invoke(instance.getObjectName(), "start", new Object[0], new String[0]);
 	}
 
 	@Override
-	public Object stop() throws Exception {
-		Object result = conn.invoke(instance.getObjectName(), "stop", new Object[0], new String[0]);
-		return result;
+	public void stop() throws Exception {
+		conn.invoke(instance.getObjectName(), "stop", new Object[0], new String[0]);
 	}
 
 	@Override
-	public Object suspend() throws Exception {
-		Object result = conn.invoke(instance.getObjectName(), "suspend", new Object[0], new String[0]);
-		return result;
+	public void suspend() throws Exception {
+		conn.invoke(instance.getObjectName(), "suspend", new Object[0], new String[0]);
 	}
 
 }
