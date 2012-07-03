@@ -9,7 +9,7 @@
 	#if ($entry.key == "CamelId")
 	<td><a href="#springUrl("/context/$entry.value")">$entry.value</td>
 	#else
-	<td>$entry.value</td>
+	<td>$!entry.value</td>
 	#end
 </tr>
 #end
@@ -51,7 +51,7 @@
 <table cellspacing="0" cellpadding="3">
 <caption>Route XML</caption>
 <tr>
-	<td>$xml</td>
+	<td><pre>$esctool.html($xml)</pre></td>
 </tr>
 </table>
 
