@@ -15,7 +15,7 @@ Features
 Installation
 ============
 
-Installation is extremely simple. Download the <a href="https://github.com/downloads/sksamuel/camelwatch/camelwatch-0.3.war">latest war</a> and deploy into any running tomcat container. After tomcat deploys the application edit the /<warname>/WEB-INF/classes/camelwatch.properties file. Replace the jmx.endpoint property with the URL of the JMX endpoint for the camel instance you want to monitor. Restart tomcat and then browse to /<warname> and you should be good to go.
+Installation is extremely simple. Download the <a href="https://github.com/downloads/sksamuel/camelwatch/camelwatch-0.4.war">latest war</a> and deploy into any running tomcat container. After tomcat deploys the application edit the /<warname>/WEB-INF/classes/camelwatch.properties file. Replace the jmx.endpoint property with the URL of the JMX endpoint for the camel instance you want to monitor. Restart tomcat and then browse to /<warname> and you should be good to go.
 
 Rest
 ====
