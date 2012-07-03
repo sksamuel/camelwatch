@@ -2,7 +2,6 @@
 
 <h1>Camel Watch</h1>
 
-#parse("message.vm")
 
 
 <table cellspacing="0" cellpadding="3">

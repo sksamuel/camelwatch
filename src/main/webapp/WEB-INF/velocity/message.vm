@@ -1,3 +1,35 @@
-#if ($message)
-<div class="messsage">$message</div>
+#parse("header.vm")
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Message</caption>
+
+<tr>
+	<td>Exchange ID</td>
+	<td>$message.exchangeId</td>
+</tr>
+
+#foreach ($entry in $message.headers.entrySet())
+<tr>
+	<td>$entry.key</td>
+	<td>$entry.value</td>
+</tr>
 #end
+
+</table>
+
+
+<table cellspacing="0" cellpadding="3">
+<caption>Body</caption>
+<tr>
+	<td>Body Type</td>
+	<td>$message.bodyType</td>
+</tr>
+<tr>
+	<td colspan="2">$message.body</td>
+</tr>
+</table>
+
+
+
+#parse("footer.vm")

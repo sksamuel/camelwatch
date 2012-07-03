@@ -14,12 +14,32 @@ public class Message {
 
 	private final Map<String, String>	headers	= Maps.newHashMap();
 
+	private String				body;
+
+	private String				bodyType;
+
+	public String getBody() {
+		return body;
+	}
+
+	public String getBodyType() {
+		return bodyType;
+	}
+
 	public String getExchangeId() {
 		return exchangeId;
 	}
 
 	public Map<String, String> getHeaders() {
 		return headers;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+	}
+
+	public void setBodyType(String bodyType) {
+		this.bodyType = bodyType;
 	}
 
 	public void setExchangeId(String exchangeId) {

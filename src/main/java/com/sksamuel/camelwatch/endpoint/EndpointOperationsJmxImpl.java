@@ -9,6 +9,7 @@ import javax.management.MBeanServerConnection;
 import javax.management.ObjectInstance;
 
 import org.jdom2.Document;
+import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 
 import com.sksamuel.camelwatch.Message;
@@ -41,12 +42,16 @@ public class EndpointOperationsJmxImpl implements EndpointOperations {
 	}
 
 	@Override
-	public String browseMessageAsXml(int offset) throws Exception {
-		Object result = conn.invoke(instance.getObjectName(),
+	public Message browseMessageAsXml(int offset, boolean includeBody) throws Exception {
+		String result = (String) conn.invoke(instance.getObjectName(),
 				"browseMessageAsXml",
 				new Object[] { offset },
 				new String[] { "java.lang.Integer" });
-		return (String) result;
+		if (result == null)
+			return null;
+		Document doc = new SAXBuilder().build(new StringReader(result));
+		Element root = doc.getRootElement();
+		return new MessageFactory().build(root);
 	}
 
 	@Override

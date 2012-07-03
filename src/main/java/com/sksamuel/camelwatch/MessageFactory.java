@@ -16,8 +16,16 @@ public class MessageFactory {
 	public Message build(Element e) {
 		Message m = new Message();
 		m.setExchangeId(e.getAttributeValue("exchangeId"));
-		for (Element header : e.getChildren("header")) {
-			m.getHeaders().put(header.getAttributeValue("key"), header.getTextTrim());
+		Element headers = e.getChild("headers");
+		if (headers != null) {
+			for (Element header : headers.getChildren("header")) {
+				m.getHeaders().put(header.getAttributeValue("key"), header.getTextTrim());
+			}
+		}
+		Element body = e.getChild("body");
+		if (body != null) {
+			m.setBody(body.getTextTrim());
+			m.setBodyType(body.getAttributeValue("type"));
 		}
 		return m;
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,10 +41,10 @@ public class EndpointController {
 
 	@RequestMapping("browseMessageAsXml")
 	@ResponseBody
-	public String browseMessageAsXml(@RequestParam("endpointName") String endpointName,
+	public Message browseMessageAsXml(@RequestParam("endpointName") String endpointName,
 			@RequestParam("offset") int offset) throws Exception {
 		CamelConnection conn = connectionFactory.getConnection();
-		String exchange = conn.getEndpointOperations(endpointName).browseMessageAsXml(offset);
+		Message exchange = conn.getEndpointOperations(endpointName).browseMessageAsXml(offset, true);
 		return exchange;
 	}
 
@@ -54,6 +55,20 @@ public class EndpointController {
 		CamelConnection conn = connectionFactory.getConnection();
 		String exchange = conn.getEndpointOperations(endpointName).browseMessageBody(offset);
 		return exchange;
+	}
+
+	@RequestMapping(value = "message/{index}", method = RequestMethod.POST)
+	public String message(@RequestParam("endpointName") String endpointName,
+			@PathVariable("index") int index,
+			ModelMap map) throws Exception {
+
+		CamelConnection conn = connectionFactory.getConnection();
+		EndpointOperations ops = conn.getEndpointOperations(endpointName);
+
+		Message message = ops.browseMessageAsXml(index, true);
+		map.put("message", message);
+
+		return "message";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)

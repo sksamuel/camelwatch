@@ -12,7 +12,7 @@ public interface EndpointOperations {
 
 	String browseExchange(int offset) throws Exception;
 
-	String browseMessageAsXml(int offset) throws Exception;
+	Message browseMessageAsXml(int offset, boolean includeBody) throws Exception;
 
 	String browseMessageBody(int offset) throws Exception;
 

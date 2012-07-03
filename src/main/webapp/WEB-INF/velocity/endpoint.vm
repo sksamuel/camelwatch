@@ -25,11 +25,16 @@
 <caption>Messages</caption>
 
 <tr>
+	<th>View</th>
 	<th>Index</th>
 	<th>Exchange Id</th>
 </tr>
 #foreach ($msg in $messages) 
 <tr>
+	<form method="POST" action="#springUrl("/endpoint/message/$velocityCount")">
+	<input type="hidden" name="endpointName" value="$endpoint.name"/>
+	<td><input type="submit" value="View"/></td>
+	</form>
 	<td>$velocityCount</td> 
 	<td>$msg.exchangeId</td>
 </tr>
