@@ -1,5 +1,9 @@
 package com.sksamuel.camelwatch.endpoint;
 
+import java.util.List;
+
+import com.sksamuel.camelwatch.Message;
+
 /**
  * @author Stephen K Samuel samspade79@gmail.com 1 Jul 2012 16:50:27
  * 
@@ -8,9 +12,11 @@ public interface EndpointOperations {
 
 	String browseExchange(int offset) throws Exception;
 
+	String browseMessageAsXml(int offset) throws Exception;
+
 	String browseMessageBody(int offset) throws Exception;
 
-	String browseMessageAsXml(int offset) throws Exception;
+	List<Message> browseRangeMessagesAsXml(int offset, int end, boolean includeBody) throws Exception;
 
 	long queueSize() throws Exception;
 }

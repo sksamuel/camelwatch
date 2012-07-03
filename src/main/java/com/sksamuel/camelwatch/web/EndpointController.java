@@ -1,5 +1,7 @@
 package com.sksamuel.camelwatch.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sksamuel.camelwatch.CamelBean;
 import com.sksamuel.camelwatch.CamelConnection;
 import com.sksamuel.camelwatch.CamelConnectionFactory;
+import com.sksamuel.camelwatch.Message;
+import com.sksamuel.camelwatch.endpoint.EndpointOperations;
 
 /**
  * @author Stephen K Samuel samspade79@gmail.com 1 Jul 2012 19:02:59
@@ -20,6 +24,7 @@ import com.sksamuel.camelwatch.CamelConnectionFactory;
 @RequestMapping("endpoint")
 public class EndpointController {
 
+	private static final int		MAX_OVERVIEW_MESSAGES	= 15;
 	@Autowired
 	private CamelConnectionFactory	connectionFactory;
 
@@ -55,12 +60,18 @@ public class EndpointController {
 	public String show(@RequestParam("endpointName") String endpointName, ModelMap map) throws Exception {
 
 		CamelConnection conn = connectionFactory.getConnection();
+		EndpointOperations ops = conn.getEndpointOperations(endpointName);
 
 		CamelBean endpoint = conn.getEndpoint(endpointName);
-		long queueSize = conn.getEndpointOperations(endpointName).queueSize();
+		long queueSize = ops.queueSize();
 		endpoint.getProperties().put("queueSize()", queueSize);
+		List<Message> messages = ops.browseRangeMessagesAsXml(0,
+				Math.min((int) queueSize, MAX_OVERVIEW_MESSAGES),
+				false);
 
 		map.put("endpoint", endpoint);
+		map.put("messages", messages);
+
 		return "endpoint";
 	}
 }

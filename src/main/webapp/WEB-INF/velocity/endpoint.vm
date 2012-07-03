@@ -19,6 +19,28 @@
 </table>
 
 
+#if ($messages)
+#if ($messages.size() > 0)
+<table cellspacing="0" cellpadding="3">
+<caption>Messages</caption>
+
+<tr>
+	<th>Index</th>
+	<th>Exchange Id</th>
+</tr>
+#foreach ($msg in $messages) 
+<tr>
+	<td>$velocityCount</td> 
+	<td>$msg.exchangeId</td>
+</tr>
+#end
+
+</table>
+#end
+#end
+
+
+
 <table cellspacing="0" cellpadding="3">
 <caption>Browse Messages</caption>
 
@@ -47,6 +69,9 @@
 </tr>
 
 </table>
+
+
+
 
 
 #parse("footer.vm")
