@@ -65,4 +65,12 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 		conn.invoke(instance.getObjectName(), "suspend", new Object[0], new String[0]);
 	}
 
+	@Override
+	public void updateRouteFromXml(String xml) throws Exception {
+		conn.invoke(instance.getObjectName(),
+				"updateRouteFromXml",
+				new Object[] { xml },
+				new String[] { "java.lang.String" });
+	}
+
 }

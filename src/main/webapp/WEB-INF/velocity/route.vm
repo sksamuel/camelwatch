@@ -50,9 +50,12 @@
 
 <table cellspacing="0" cellpadding="3">
 <caption>Route XML</caption>
+<form method="POST" action="#springUrl("/route/$route.properties.RouteId/update")">
 <tr>
-	<td><pre>$esctool.html($xml)</pre></td>
+	<td><textarea cols="140" rows="$xml.split("\n").size()" name="xml">$xml</textarea><br/>
+			<input type="submit" value="Update"/></td>
 </tr>
+</form>
 </table>
 
 

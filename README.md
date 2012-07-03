@@ -35,6 +35,12 @@ Camelwatch includes a set of REST services. These are accessible at the followin
 * /contextPath/rest/processor
 * /contextPath/rest/processor/{processorName}
 
+Releases
+========
+0.4 Added route editing via XML. Added browsing of messages directly in endpoints.
+0.3 Added rest services
+
+
 Roadmap
 =======
 

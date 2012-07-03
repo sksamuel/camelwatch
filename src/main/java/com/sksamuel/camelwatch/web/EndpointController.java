@@ -80,12 +80,16 @@ public class EndpointController {
 		CamelBean endpoint = conn.getEndpoint(endpointName);
 		long queueSize = ops.queueSize();
 		endpoint.getProperties().put("queueSize()", queueSize);
-		List<Message> messages = ops.browseRangeMessagesAsXml(0,
-				Math.min((int) queueSize, MAX_OVERVIEW_MESSAGES),
-				false);
 
 		map.put("endpoint", endpoint);
-		map.put("messages", messages);
+
+		try {
+			List<Message> messages = ops.browseRangeMessagesAsXml(0,
+					Math.min((int) queueSize, MAX_OVERVIEW_MESSAGES),
+					false);
+			map.put("messages", messages);
+		} catch (Exception e) {
+		}
 
 		return "endpoint";
 	}

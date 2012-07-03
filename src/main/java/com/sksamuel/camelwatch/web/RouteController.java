@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -99,6 +100,15 @@ public class RouteController {
 		CamelConnection conn = connectionFactory.getConnection();
 		RouteOperations routeOps = conn.getRouteOperations(routeId);
 		routeOps.suspend();
+		return getRedirect(routeId);
+	}
+
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String updateRouteFromXml(@PathVariable("routeId") String routeId, @RequestParam("xml") String xml)
+			throws Exception {
+		CamelConnection conn = connectionFactory.getConnection();
+		RouteOperations routeOps = conn.getRouteOperations(routeId);
+		routeOps.updateRouteFromXml(xml);
 		return getRedirect(routeId);
 	}
 }

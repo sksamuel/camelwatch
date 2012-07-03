@@ -21,4 +21,6 @@ public interface RouteOperations {
 	void stop() throws Exception;
 
 	void suspend() throws Exception;
+
+	void updateRouteFromXml(String xml) throws Exception;
 }
