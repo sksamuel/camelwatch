@@ -19,13 +19,19 @@ import com.google.common.collect.Maps;
 @Service
 public class CamelConnectionFactory {
 
-	@Value("${jmx.endpoint}")
-	private String					endpoint;
+	@Value("${jmx.endpoint.url}")
+	private String					url;
+
+	@Value("${jmx.endpoint.username}")
+	private String					username;
+
+	@Value("${jmx.endpoint.password}")
+	private String					password;
 
 	private final Map<ObjectName, MBeanInfo>	beanInfoCache	= Maps.newHashMap();
 
 	public CamelConnection getConnection() throws MalformedObjectNameException, NullPointerException, IOException {
-		return new CamelJmxConnection(endpoint, beanInfoCache);
+		return new CamelJmxConnection(url, username, password, beanInfoCache);
 	}
 
 }

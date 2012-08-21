@@ -40,11 +40,11 @@ public class CamelJmxConnection implements CamelConnection {
 	private final MBeanServerConnection		conn;
 	private final Map<ObjectName, MBeanInfo>	beanInfoCache;
 
-	public CamelJmxConnection(String url, Map<ObjectName, MBeanInfo> beanInfoCache) throws IOException,
+	public CamelJmxConnection(String url, String username, String password, Map<ObjectName, MBeanInfo> beanInfoCache) throws IOException,
 			MalformedObjectNameException, NullPointerException {
 		this.beanInfoCache = beanInfoCache;
 		Map<String, String[]> env = new HashMap<String, String[]>();
-		env.put(JMXConnector.CREDENTIALS, new String[] { "user", "pass" });
+		env.put(JMXConnector.CREDENTIALS, new String[] { username, password });
 
 		JMXServiceURL address = new JMXServiceURL(url);
 		JMXConnector connector = JMXConnectorFactory.connect(address, env);
@@ -52,8 +52,8 @@ public class CamelJmxConnection implements CamelConnection {
 
 	}
 
-	MBeanInfo getBeanInfo(ObjectInstance instance) throws InstanceNotFoundException, IntrospectionException,
-			ReflectionException, IOException {
+	MBeanInfo getBeanInfo(ObjectInstance instance) throws InstanceNotFoundException, IntrospectionException, ReflectionException,
+			IOException {
 		if (beanInfoCache.containsKey(instance.getObjectName()))
 			return beanInfoCache.get(instance.getObjectName());
 		MBeanInfo mBeanInfo = conn.getMBeanInfo(instance.getObjectName());
@@ -68,8 +68,8 @@ public class CamelJmxConnection implements CamelConnection {
 		return bean;
 	}
 
-	List<CamelBean> getCamelBeans(String type) throws IOException, MalformedObjectNameException,
-			InstanceNotFoundException, IntrospectionException, ReflectionException, Exception {
+	List<CamelBean> getCamelBeans(String type) throws IOException, MalformedObjectNameException, InstanceNotFoundException,
+			IntrospectionException, ReflectionException, Exception {
 		Set<ObjectInstance> beans = getObjectInstances(type);
 		List<CamelBean> endpoints = Lists.newArrayList();
 		for (ObjectInstance instance : beans) {
@@ -137,10 +137,8 @@ public class CamelJmxConnection implements CamelConnection {
 		return getCamelBeans("errorhandlers");
 	}
 
-	ObjectInstance getObjectInstance(String type, String name) throws MalformedObjectNameException,
-			NullPointerException, IOException {
-		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name="
-				+ name + ",*"), null);
+	ObjectInstance getObjectInstance(String type, String name) throws MalformedObjectNameException, NullPointerException, IOException {
+		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",name=" + name + ",*"), null);
 		return beans.isEmpty() ? null : beans.iterator().next();
 	}
 
