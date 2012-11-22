@@ -246,9 +246,9 @@
             <version>1.4.2</version>
         </dependency>
         <dependency>
-            <groupId>org.jdom</groupId>
-            <artifactId>jdom2</artifactId>
-            <version>0.0.6-BETA</version>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
         </dependency>
     </dependencies>
 
