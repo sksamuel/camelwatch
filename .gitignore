@@ -9,6 +9,7 @@
 /.settings/org.eclipse.wst.common.project.facet.core.xml
 /.settings/org.eclipse.wst.jsdt.ui.superType.container
 /.settings/org.eclipse.wst.jsdt.ui.superType.name
+/.idea
 /target/classes/com/sksamuel/camelwatch/CamelConnection.class
 /target/classes/com/sksamuel/camelwatch/CamelJmxConnection.class
 /target/classes/com/sksamuel/camelwatch/CamelJmxConnectionFactory.class
