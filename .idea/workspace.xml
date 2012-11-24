@@ -2,8 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="314a6959-9d25-4d64-876b-e3bac1be57e5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom2_0_0_6_BETA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pom.xml.versionsBackup" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-api/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/scala/camelwatch/RouteEntryListener.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/scala/camelwatch/RouteMonitorServlet.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ConsumerRestEndpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ContextRestEndpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/EndpointRestEndpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ErrorHandlerRestEndpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ProcessorRestEndpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/RouteRestEndpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ConsumerController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/EndpointController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ErrorHandlerController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ManagerController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/RestStyleUrlResolver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/RouteController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/UrlResolver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/resources/spring-camelwatch-context.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/rest/ConsumerRestEndpoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/rest/ContextRestEndpoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/rest/EndpointRestEndpoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/rest/ErrorHandlerRestEndpoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/rest/ProcessorRestEndpoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/rest/RouteRestEndpoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/ConsumerController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/EndpointController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/ErrorHandlerController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/ManagerController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/RestStyleUrlResolver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/RouteController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/UrlResolver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/spring-camelwatch-context.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/CamelBean.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelBean.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/CamelBeanFactory.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelBeanFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/CamelConnection.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/CamelConnectionFactory.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelConnectionFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/CamelJmxConnection.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelJmxConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/Message.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/Message.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/MessageFactory.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/MessageFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/consumer/ConsumerOperations.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/consumer/ConsumerOperations.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/consumer/ConsumerOperationsJmxImpl.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/consumer/ConsumerOperationsJmxImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/context/ContextOperations.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/context/ContextOperations.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/context/ContextOperationsJmxImpl.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/context/ContextOperationsJmxImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/endpoint/EndpointOperations.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/endpoint/EndpointOperations.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/endpoint/EndpointOperationsJmxImpl.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/endpoint/EndpointOperationsJmxImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/route/RouteOperations.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/route/RouteOperations.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/route/RouteOperationsJmxImpl.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/route/RouteOperationsJmxImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/GlobalModelAttributesInterceptor.java" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/GlobalModelAttributesInterceptor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sksamuel/camelwatch/web/WebConfig.java" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/WebConfig.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/camelwatch.properties" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/resources/camelwatch.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/resources/log4j.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/spring-camelwatch-mvc.xml" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/resources/spring-camelwatch-mvc.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/toolbox.xml" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/toolbox.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/consumer.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/consumer.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/context.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/context.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/endpoint.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/endpoint.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/errorHandler.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/errorHandler.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/footer.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/footer.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/header.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/header.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/manager.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/manager.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/message.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/message.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocity/route.vm" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/velocity/route.vm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/camelwatch.css" afterPath="$PROJECT_DIR$/camelwatch-web/src/main/webapp/camelwatch.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
@@ -75,8 +140,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/license.txt" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/camelwatch-web/pom.xml" />
+        <option value="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/MessageFactory.java" />
+        <option value="$PROJECT_DIR$/camelwatch-api/pom.xml" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ErrorHandlerRestEndpoint.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ErrorHandlerController.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/EndpointController.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/RouteController.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/EndpointRestEndpoint.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ContextRestEndpoint.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ConsumerRestEndpoint.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/RouteRestEndpoint.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ProcessorRestEndpoint.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ConsumerController.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ManagerController.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/UrlResolver.java" />
+        <option value="$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/RestStyleUrlResolver.java" />
       </list>
     </option>
   </component>
@@ -89,11 +168,50 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="camelwatch" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="24" />
-    <option name="width" value="1871" />
-    <option name="height" value="1056" />
+    <option name="x" value="48" />
+    <option name="y" value="-4" />
+    <option name="width" value="1873" />
+    <option name="height" value="1085" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -116,21 +234,125 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="camelwatch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -143,21 +365,171 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/camelwatch-web/src/main/java" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="Errors" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/camelwatch-web/src/main/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/camelwatch-web/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/camelwatch-api/src/main/scala" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -247,36 +619,57 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="314a6959-9d25-4d64-876b-e3bac1be57e5" name="Default" comment="" />
       <created>1353618801409</created>
       <updated>1353618801409</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="24" width="1871" height="1056" extended-state="6" />
+    <frame x="48" y="-4" width="1873" height="1085" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329863" sideWeight="0.496788" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329863" sideWeight="0.49571735" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24876712" sideWeight="0.6702356" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -333,24 +726,119 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/license.txt">
+    <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/MessageFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="33" selection-start="11357" selection-end="11357" vertical-scroll-proportion="0.9669604">
+        <state line="12" column="13" selection-start="241" selection-end="241" vertical-scroll-proportion="0.19823788">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ErrorHandlerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="377" selection-end="377" vertical-scroll-proportion="0.18171807">
+        <state line="9" column="41" selection-start="350" selection-end="350" vertical-scroll-proportion="0.22998296">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/EndpointController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="244" column="44" selection-start="9677" selection-end="9677" vertical-scroll-proportion="0.6696035">
+        <state line="32" column="12" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.8177172">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/RouteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="36" selection-start="3833" selection-end="3833" vertical-scroll-proportion="0.54003406">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.1.1.RELEASE/spring-web-3.1.1.RELEASE.jar!/org/springframework/web/context/ServletContextAware.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="173" selection-end="173" vertical-scroll-proportion="0.13043478">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ContextRestEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="58" selection-start="284" selection-end="284" vertical-scroll-proportion="0.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ConsumerRestEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.20783645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/EndpointRestEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="28" selection-start="141" selection-end="141" vertical-scroll-proportion="0.10221465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/RouteRestEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="31" selection-start="533" selection-end="533" vertical-scroll-proportion="0.35">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ProcessorRestEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="498" selection-end="498" vertical-scroll-proportion="0.3">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/rest/ErrorHandlerRestEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="601" selection-end="601" vertical-scroll-proportion="0.41226575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ConsumerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="19" selection-start="2350" selection-end="2350" vertical-scroll-proportion="1.5332198">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/ManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="60" selection-start="332" selection-end="332" vertical-scroll-proportion="0.2044293">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/net/URLEncoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="72" selection-start="566" selection-end="566" vertical-scroll-proportion="0.30167598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/UrlResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="17" selection-start="204" selection-end="204" vertical-scroll-proportion="0.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-web/src/main/java/camelwatch/web/RestStyleUrlResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="42" selection-start="491" selection-end="491" vertical-scroll-proportion="0.43441227">
           <folding />
         </state>
       </provider>
