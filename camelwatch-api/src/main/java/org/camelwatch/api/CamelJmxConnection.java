@@ -1,35 +1,21 @@
 package org.camelwatch.api;
 
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.management.InstanceNotFoundException;
-import javax.management.IntrospectionException;
-import javax.management.MBeanInfo;
-import javax.management.MBeanServerConnection;
-import javax.management.MalformedObjectNameException;
-import javax.management.ObjectInstance;
-import javax.management.ObjectName;
-import javax.management.ReflectionException;
-import javax.management.remote.JMXConnector;
-import javax.management.remote.JMXConnectorFactory;
-import javax.management.remote.JMXServiceURL;
-
-import org.camelwatch.api.consumer.ConsumerOperations;
-import org.camelwatch.api.endpoint.EndpointOperations;
-import org.camelwatch.api.endpoint.EndpointOperationsJmxImpl;
-import org.camelwatch.api.route.RouteOperations;
-import org.camelwatch.api.consumer.ConsumerOperationsJmxImpl;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
+import org.camelwatch.api.consumer.ConsumerOperations;
+import org.camelwatch.api.consumer.ConsumerOperationsJmxImpl;
+import org.camelwatch.api.endpoint.EndpointOperations;
+import org.camelwatch.api.endpoint.EndpointOperationsJmxImpl;
+import org.camelwatch.api.route.RouteOperations;
 import org.camelwatch.api.route.RouteOperationsJmxImpl;
+
+import javax.management.*;
+import javax.management.remote.JMXConnector;
+import javax.management.remote.JMXConnectorFactory;
+import javax.management.remote.JMXServiceURL;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * @author Stephen K Samuel samspade79@gmail.com 29 Jun 2012 00:26:13
@@ -64,8 +50,7 @@ public class CamelJmxConnection implements CamelConnection {
 	CamelBean getCamelBean(String type, String name) throws Exception {
 		ObjectInstance instance = getObjectInstance(type, name);
 		MBeanInfo info = getBeanInfo(instance);
-		CamelBean bean = new CamelBeanFactory().build(instance, conn, info);
-		return bean;
+        return new CamelBeanFactory().build(instance, conn, info);
 	}
 
 	List<CamelBean> getCamelBeans(String type) throws IOException, MalformedObjectNameException, InstanceNotFoundException,
@@ -143,8 +128,7 @@ public class CamelJmxConnection implements CamelConnection {
 	}
 
 	Set<ObjectInstance> getObjectInstances(String type) throws IOException, MalformedObjectNameException {
-		Set<ObjectInstance> beans = conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",*"), null);
-		return beans;
+        return conn.queryMBeans(new ObjectName("org.apache.camel:type=" + type + ",*"), null);
 	}
 
 	@Override

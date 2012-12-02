@@ -60,42 +60,7 @@
             <version>${javax.jsp.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!-- SPRING -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-oxm</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+
         <!-- COMMONS -->
         <dependency>
             <groupId>commons-io</groupId>
@@ -112,6 +77,14 @@
             <artifactId>joda-time</artifactId>
             <version>${jodatime.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>2.10.2</version>
+        </dependency>
+
+
+
         <!-- TESTING -->
         <dependency>
             <groupId>junit</groupId>
