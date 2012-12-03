@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="314a6959-9d25-4d64-876b-e3bac1be57e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/scala/org/camelwatch/LazyTest.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/scala/org/camelwatch/RouteMBean.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/camelwatch-api/pom.xml" afterPath="$PROJECT_DIR$/camelwatch-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelJmxConnection.java" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelJmxConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/camelwatch-api/src/main/scala/org/camelwatch/RouteMBean.scala" afterPath="$PROJECT_DIR$/camelwatch-api/src/main/scala/org/camelwatch/RouteMBean.scala" />
     </list>
     <ignored path="camelwatch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -149,10 +146,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="48" />
-    <option name="y" value="-4" />
-    <option name="width" value="1873" />
-    <option name="height" value="1085" />
+    <option name="x" value="49" />
+    <option name="y" value="24" />
+    <option name="width" value="1871" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -199,6 +196,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -215,90 +222,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="camelwatch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="camelwatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="camelwatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="camelwatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javax" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="camelwatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javax" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -412,6 +335,10 @@
               <option name="myItemId" value="scala" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camelwatch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -467,20 +394,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="camelwatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="camelwatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -499,9 +412,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -657,7 +570,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="-4" width="1873" height="1085" extended-state="6" />
+    <frame x="49" y="24" width="1871" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -668,17 +581,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25315067" sideWeight="0.6702356" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25260273" sideWeight="0.6702356" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329863" sideWeight="0.4828694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24712329" sideWeight="0.6702356" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24657534" sideWeight="0.6702356" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -749,103 +662,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/camelwatch-web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/camelwatch-api/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="20" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.48156425">
-          <folding />
-        </state>
+        <state line="79" column="20" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.48156425" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.10.2/camel-core-2.10.2.jar!/org/apache/camel/api/management/mbean/ManagedRouteMBean.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/scala/camelwatch/RouteMonitorServlet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.21145375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/scala/camelwatch/RouteEntryListener.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.17621145">
-          <folding />
-        </state>
+        <state line="6" column="4" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.10.2/camel-core-2.10.2-sources.jar!/org/apache/camel/api/management/mbean/ManagedCounterMBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="26" selection-start="1157" selection-end="1171" vertical-scroll-proportion="0.7513043">
-          <folding />
-        </state>
+        <state line="27" column="26" selection-start="1157" selection-end="1171" vertical-scroll-proportion="0.7513043" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.10.2/camel-core-2.10.2-sources.jar!/org/apache/camel/api/management/mbean/ManagedPerformanceCounterMBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="65" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.27652174">
-          <folding />
-        </state>
+        <state line="23" column="65" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.27652174" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.10.2/camel-core-2.10.2-sources.jar!/org/apache/camel/api/management/mbean/ManagedRouteMBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="24" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.38546255">
-          <folding />
-        </state>
+        <state line="24" column="24" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.38546255" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/route/RouteOperationsJmxImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="30" selection-start="885" selection-end="885" vertical-scroll-proportion="0.36563876">
-          <folding />
-        </state>
+        <state line="25" column="30" selection-start="885" selection-end="885" vertical-scroll-proportion="0.36563876" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/route/RouteOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="27" selection-start="366" selection-end="366" vertical-scroll-proportion="0.3524229">
-          <folding />
-        </state>
+        <state line="20" column="27" selection-start="366" selection-end="366" vertical-scroll-proportion="0.3524229" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/scala/org/camelwatch/LazyTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="195" selection-end="195" vertical-scroll-proportion="0.17621145">
-          <folding />
-        </state>
+        <state line="10" column="22" selection-start="195" selection-end="195" vertical-scroll-proportion="0.17621145" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/java/org/camelwatch/api/CamelJmxConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="31" selection-start="811" selection-end="829" vertical-scroll-proportion="0.3329609">
-          <folding />
-        </state>
+        <state line="23" column="31" selection-start="811" selection-end="829" vertical-scroll-proportion="0.3329609" />
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/javax/management/MBeanServerConnection.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="21" selection-start="2761" selection-end="2761" vertical-scroll-proportion="0.37430167">
+        <state line="27" column="21" selection-start="2761" selection-end="2761" vertical-scroll-proportion="0.37430167" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/scala/camelwatch/RouteEntryListener.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.17621145" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/scala/camelwatch/RouteMonitorServlet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="1" selection-start="268" selection-end="268" vertical-scroll-proportion="0.1938326">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/camelwatch-api/src/main/scala/org/camelwatch/RouteMBean.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="55" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.8105727">
+        <state line="68" column="0" selection-start="2530" selection-end="2530" vertical-scroll-proportion="1.1982379">
           <folding />
         </state>
       </provider>

@@ -9,9 +9,12 @@ import javax.management.{ObjectInstance, MBeanServerConnection}
 /** @author Stephen Samuel */
 class RouteMBean(obj: ObjectInstance, conn: MBeanServerConnection) extends ManagedRouteMBean {
 
+    val exchangesTotal = getAttribute("exchangesTotal").toLong
+    val camelId = getAttribute("camelId").toString
+    val routeId = getAttribute("routeId").toString
+
     def getAttribute(attributeName: String): String = conn.getAttribute(obj.getObjectName, attributeName)
 
-    lazy val exchangesTotal = getAttribute("exchangesTotal").toLong
     def getExchangesTotal: Long = exchangesTotal
 
     def reset() {}
@@ -38,13 +41,12 @@ class RouteMBean(obj: ObjectInstance, conn: MBeanServerConnection) extends Manag
     def getRoutePolicyList: String = ""
     def setTracing(tracing: lang.Boolean) {}
     def getTracing: java.lang.Boolean = false
-    def getCamelId: String = ""
+    def getCamelId: String = camelId
     def getInflightExchanges: java.lang.Integer = 0
     def getState: String = ""
     def getEndpointUri: String = ""
     def getDescription: String = ""
 
-    lazy val routeId = getAttribute("routeId").toString
     def getRouteId: String = routeId
 
     def dumpStatsAsXml(fullStats: Boolean): String = ""
@@ -58,9 +60,17 @@ class RouteMBean(obj: ObjectInstance, conn: MBeanServerConnection) extends Manag
     def getFirstExchangeCompletedTimestamp: Date = null
     def getLastExchangeCompletedExchangeId = ""
     def getLastExchangeCompletedTimestamp: Date = null
+
+    lazy val lastProcessingTime = getAttribute("lastProcessingTime").toLong
     def getLastProcessingTime: Long = 0
+
+    lazy val totalProcessingTime = getAttribute("totalProcessingTime").toLong
     def getTotalProcessingTime: Long = 0
+
+    lazy val maxProcessingTime = getAttribute("totalProcessingTime").toLong
     def getMaxProcessingTime: Long = 0
+
+
     def getMeanProcessingTime: Long = 0
     def getMinProcessingTime: Long = 0
     def getExternalRedeliveries: Long = 0
