@@ -13,7 +13,7 @@ class RouteMBean(obj: ObjectInstance, conn: MBeanServerConnection) extends Manag
     val camelId = getAttribute("camelId").toString
     val routeId = getAttribute("routeId").toString
 
-    def getAttribute(attributeName: String): String = conn.getAttribute(obj.getObjectName, attributeName)
+    def getAttribute(attributeName: String): String = conn.getAttribute(obj.getObjectName, attributeName).toString
 
     def getExchangesTotal: Long = exchangesTotal
 
