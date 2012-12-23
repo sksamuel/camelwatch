@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.scalatra</groupId>
+            <artifactId>scalatra</artifactId>
+            <version>2.2.0-RC2</version>
+        </dependency>
+        <dependency>
             <groupId>org.camelwatch</groupId>
             <artifactId>camelwatch-api</artifactId>
             <version>${project.version}</version>
@@ -39,7 +44,11 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.sksamuel.jmxc</groupId>
+            <artifactId>jmxc</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
