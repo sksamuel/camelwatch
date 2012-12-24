@@ -72,6 +72,7 @@
     <orderEntry type="library" name="Maven: xpp3:xpp3_min:1.1.4c" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.9.2" level="project" />
     <orderEntry type="library" name="Maven: com.sksamuel.jmxc:jmxc:1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.sun:tools:1.7.0_10" level="project" />
   </component>
 </module>
 

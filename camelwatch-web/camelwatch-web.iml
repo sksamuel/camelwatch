@@ -19,10 +19,17 @@
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/scala" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset1" name="XML Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/spring-camelwatch-mvc.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring-camelwatch-context.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
@@ -38,14 +45,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.scalatra:scalatra:2.2.0-RC2" level="project" />
-    <orderEntry type="library" name="Maven: org.scalatra:scalatra-common:2.2.0-RC2" level="project" />
+    <orderEntry type="library" name="Maven: org.scalatra:scalatra:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.9.2" level="project" />
-    <orderEntry type="library" name="Maven: org.clapper:grizzled-slf4j_2.9.2:0.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.clapper:grizzled-slf4j_2.9.2:0.6.9" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />
-    <orderEntry type="library" name="Maven: org.scalatra.rl:rl_2.9.2:0.4.0" level="project" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.joda:joda-convert:1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.backchat.rl:rl_2.9.2:0.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.scalatra:scalatra-scalate:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.fusesource.scalate:scalate-core:1.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.fusesource.scalate:scalate-util:1.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.9.1" level="project" />
     <orderEntry type="module" module-name="camelwatch-api" />
     <orderEntry type="library" name="Maven: org.jdom:jdom2:2.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.9.7" level="project" />
@@ -78,6 +86,7 @@
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.3" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:12.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:1.3.9" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-core:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.5" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
@@ -88,6 +97,7 @@
     <orderEntry type="library" name="Maven: xmlpull:xmlpull:1.1.3.1" level="project" />
     <orderEntry type="library" name="Maven: xpp3:xpp3_min:1.1.4c" level="project" />
     <orderEntry type="library" name="Maven: com.sksamuel.jmxc:jmxc:1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.sun:tools:1.7.0_10" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet.jsp:jsp-api:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-asm:3.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:3.1.1.RELEASE" level="project" />

@@ -10,6 +10,6 @@ import com.sksamuel.jmxc.JmxClient
  **/
 class CamelJmxClient(client: JmxClient) {
     def domain = client.domain("org.apache.camel").getOrElse(throw new RuntimeException("Error locating camel jxm domain"))
-    def routes: Array[RouteMBean] = domain.beans("routes").map(new RouteMBean(_))
+    def routes: Array[RouteMBean] = domain.beans("routes").map(new RouteMBean(_)).sortBy(_.routeId)
     def components: Array[ComponentMBean] = domain.beans("components").map(new ComponentMBean(_))
 }

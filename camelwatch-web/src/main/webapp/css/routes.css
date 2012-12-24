@@ -1,0 +1,40 @@
+body {
+    background-color: black !important;
+    padding: 12px;
+}
+
+div.route-row {
+
+}
+
+div.route {
+    font-family: Sans;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+div.route .title {
+    font-size: 16pt;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+
+div.ok {
+    background: #336600;
+}
+
+div.error {
+    background: #990000;
+}
+
+div.warn {
+    background: #ff9900;
+}
