@@ -106,7 +106,33 @@
         </repository>
     </repositories>
 
+	<!-- Taken from FIEF modules project to test -->
+	<!-- <distributionManagement>
+		<repository>
+			<id>${server.id}</id>
+			<url>${releases.url}</url>
+			<name>Releases</name>
+		</repository>
+		<snapshotRepository>
+			<id>${server.id}</id>
+			<url>${snapshots.url}</url>
+			<name>Snapshots</name>
+		</snapshotRepository>
+	</distributionManagement> -->
 
+	<!-- For Local Testing -->
+	<distributionManagement>
+		<repository>
+			<id>${server.id}</id>
+			<url>${localreleases.url}</url>
+			<name>Releases</name>
+		</repository>
+		<snapshotRepository>
+			<id>${server.id}</id>
+			<url>${localsnapshots.url}</url>
+			<name>Snapshots</name>
+		</snapshotRepository>
+	</distributionManagement>
 
     <build>
         <finalName>camelwatch</finalName>
