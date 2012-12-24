@@ -19,9 +19,9 @@
             <div>Last failure: ${route.lastExchangeFailureTimestamp}</div>
 
             <div class="row-fluid exchangeStats">
-                <div class="box span4 ok"><div class="number">${route.exchangesCompleted}</div>Completed</div>
-                                <div class="box span4 warn"><div class="number">${route.redeliveries}</div>Handled</div>
-                <div class="box span4 error"><div class="number">${route.exchangesFailed}</div>Failures</div>
+                <div class="box span4 #if (route.exchangesCompleted>0) ok #end"><div class="number">${route.exchangesCompleted}</div>Completed</div>
+                <div class="box span4 #if (route.failuresHandled>0) warn #end"><div class="number">${route.failuresHandled}</div>Handled</div>
+                <div class="box span4 #if (route.exchangesFailed>0) error #end"><div class="number">${route.exchangesFailed}</div>Failures</div>
             </div>
 
         </div>
