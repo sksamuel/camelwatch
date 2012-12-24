@@ -55,5 +55,5 @@ class RouteMBean(bean: MBean) {
     def lastExchangeCompletedTimestamp: Option[String] = Option(bean.attributeValue("LastExchangeCompletedTimestamp"))
                                                          .map(arg => _format(arg.asInstanceOf[Date]))
 
-    private def _format(date: Date) = new SimpleDateFormat("HH:mm EEE dd MMM").format(date)
+    private def _format(date: Date) = new SimpleDateFormat("HH:mm:ss EEE dd MMM").format(date)
 }

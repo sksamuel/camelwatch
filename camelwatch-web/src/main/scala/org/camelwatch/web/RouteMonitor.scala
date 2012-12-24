@@ -9,8 +9,12 @@ class RouteMonitor extends ScalatraServlet with ScalateSupport {
 
     get("/") {
                  contentType = "text/html"
-                 val routes: Seq[RouteMBean] = JmxClientHolder.client.routes
-                 ssp("/routes", "routes" -> routes)
+                 ssp("/routes")
              }
 
+    get("/body") {
+                     contentType = "text/html"
+                     val routes: Seq[RouteMBean] = JmxClientHolder.client.routes
+                     ssp("/routesbody", "routes" -> routes)
+                 }
 }

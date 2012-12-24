@@ -1,5 +1,3 @@
-<%@ val routes: Seq[org.camelwatch.RouteMBean] %>
-
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="../css/routes.css"/>
@@ -14,50 +12,13 @@
                 t.width(width);
             })
             setInterval(function() {
-                $.get('ajax/test.html', function(data) {
-                  $('.result').html(data);
-                  alert('Load was performed.');
+                $.get('body', function(data) {
+                  $('body').html(data);
                 });
-            },5000)
+            },2000)
         })
     </script>
 </head>
 <body>
-
-<div class="row-fluid route-row">
-<% var count = 0 %>
-<% routes.foreach { route => %>
-
-#if (count % 3 == 0)
-</div>
-<div class="row-fluid route-row">
-#end
-
-    <div class="span4">
-        <div id="route_${route.routeId}" class="route ${route.state}">
-            <div class="title">${route.routeId}</div>
-            <div>Load: ${route.load01} / ${route.load05} / ${route.load15}</div>
-            <div>Total Exchanges: ${route.exchangesTotal}</div>
-            <div>Inflight: ${route.inflightExchanges}</div>
-            <div>Last success: ${route.lastExchangeCompletedTimestamp}</div>
-            <div>Last failure: ${route.lastExchangeFailureTimestamp}</div>
-
-            <div class="row-fluid exchangeStats">
-                <div class="box span4 ok"><div class="number">${route.exchangesCompleted}</div>Completed</div>
-                                <div class="box span4 warn"><div class="number">${route.redeliveries}</div>Handled</div>
-                <div class="box span4 error"><div class="number">${route.exchangesFailed}</div>Failures</div>
-            </div>
-
-        </div>
-
-        <span class="spot">Total ${route.totalProcessingTime}ms</span>
-        <span class="spot">Mean ${route.meanProcessingTime}ms</span>
-        <span class="spot">Last ${route.lastProcessingTime}ms</span>
-    </div>
-
-<% count = count + 1 %>
-<% } %>
-</div>
-
 </body>
 </html>
