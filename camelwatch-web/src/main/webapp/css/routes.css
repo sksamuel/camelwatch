@@ -1,40 +1,85 @@
 body {
-    background-color: black !important;
-    padding: 12px;
-}
-
-div.route-row {
-
+    background-color: #141414 !important;
+    padding: 8px 14px;
+    font-family: Sans;
 }
 
 div.route {
-    font-family: Sans;
-    text-align: center;
     color: white;
+    text-align: center;
     padding: 8px;
     font-weight: bold;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
-    margin-bottom: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 div.route .title {
+    text-overflow: clip;
+    overflow: hidden;
     font-size: 16pt;
     padding-bottom: 5px;
     margin-bottom: 5px;
     border-bottom: 1px solid white;
 }
 
-div.ok {
-    background: #336600;
+.warn {
+    background-color: #ff9900
 }
 
-div.error {
+.Started, .ok, .started {
+    background-color: #336600;
+}
+
+.Stopped, .stopped, .info {
+    background-color: #333333;
+}
+
+.error {
     background: #990000;
 }
 
-div.warn {
-    background: #ff9900;
+.exchangeBreakdownChart {
+    width: 95%;
+    height: 18px;
+    padding: 0;
+    margin: 4px auto;
+    border: 1px solid #222;
+}
+
+.chartPiece {
+    height: 18px;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    display: inline-block;
+}
+
+.spot {
+    background: #333333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    color: #cccccc;
+    font-weight: bold;
+    padding: 2px 8px;
+}
+
+.exchangeStats {
+    margin-top: 8px;
+}
+
+.box {
+    border: 1px solid white;
+    padding: 3px 6px;
+    font-size: 12px;
+}
+
+.box .number {
+    padding: 2px;
+    font-size: 22px;
 }

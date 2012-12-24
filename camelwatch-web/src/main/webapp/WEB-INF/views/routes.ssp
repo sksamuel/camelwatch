@@ -6,6 +6,21 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".exchangeBreakdownChart div").each(function() {
+                var t = $(this);
+                var width = t.attr("data-width") + "%";
+                t.width(width);
+            })
+            setInterval(function() {
+                $.get('ajax/test.html', function(data) {
+                  $('.result').html(data);
+                  alert('Load was performed.');
+                });
+            },5000)
+        })
+    </script>
 </head>
 <body>
 
@@ -18,17 +33,26 @@
 <div class="row-fluid route-row">
 #end
 
-    <div id="route_${route.routeId}" class="span4 route ok">
-        <div class="title">${route.routeId}</div>
-        <div>Total Exchanges: #${route.exchangesTotal}</div>
-        <div>Failures: #${route.exchangesFailed}</div>
-        <div>Processing Time: ${route.totalProcessingTime}ms</div>
-        <div>State: ${route.state}</div>
+    <div class="span4">
+        <div id="route_${route.routeId}" class="route ${route.state}">
+            <div class="title">${route.routeId}</div>
+            <div>Load: ${route.load01} / ${route.load05} / ${route.load15}</div>
+            <div>Total Exchanges: ${route.exchangesTotal}</div>
+            <div>Inflight: ${route.inflightExchanges}</div>
+            <div>Last success: ${route.lastExchangeCompletedTimestamp}</div>
+            <div>Last failure: ${route.lastExchangeFailureTimestamp}</div>
 
-        <div class="route-exchanges-chart">
-            <div class="ok" width="${route.exchangesFailedPercent}%"></div>
-            <div clsss="error" width="${route.exchangesFailedPercent}%"></div>
+            <div class="row-fluid exchangeStats">
+                <div class="box span4 ok"><div class="number">${route.exchangesCompleted}</div>Completed</div>
+                                <div class="box span4 warn"><div class="number">${route.redeliveries}</div>Handled</div>
+                <div class="box span4 error"><div class="number">${route.exchangesFailed}</div>Failures</div>
+            </div>
+
         </div>
+
+        <span class="spot">Total ${route.totalProcessingTime}ms</span>
+        <span class="spot">Mean ${route.meanProcessingTime}ms</span>
+        <span class="spot">Last ${route.lastProcessingTime}ms</span>
     </div>
 
 <% count = count + 1 %>
