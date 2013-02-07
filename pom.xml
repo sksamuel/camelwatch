@@ -106,9 +106,21 @@
         </repository>
     </repositories>
 
+	<!-- The required properties should be defined in the settings.xml -->
+	<distributionManagement>
+		<repository>
+			<id>camelwatch</id>
+			<url>${camelwatch.releases.url}</url>
+			<name>Releases</name>
+		</repository>
+		<snapshotRepository>
+			<id>camelwatch</id>
+			<url>${camelwatch.snapshots.url}</url>
+			<name>Snapshots</name>
+		</snapshotRepository>
+	</distributionManagement>
 
-
-    <build>
+	<build>
         <finalName>camelwatch</finalName>
         <plugins>
             <plugin>
