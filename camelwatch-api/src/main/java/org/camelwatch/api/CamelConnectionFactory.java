@@ -31,4 +31,8 @@ public class CamelConnectionFactory {
         return new CamelJmxConnection(url, username, password, beanInfoCache);
     }
 
+    public CamelConnection getConnection(String url, String username, String password) throws MalformedObjectNameException, NullPointerException, IOException {
+        Map<ObjectName, MBeanInfo> beanInfoCache = Maps.newHashMap() ;
+        return new CamelJmxConnection(url, username, password, beanInfoCache);
+    }
 }

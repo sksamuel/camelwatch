@@ -25,6 +25,7 @@ class RouteMBean(bean: MBean) {
     def meanProcessingTime = bean.attributeValue("MeanProcessingTime").toString.toLong
     def minProcessingTime = bean.attributeValue("MinProcessingTime").toString.toLong
 
+
     def externalRedeliveries = bean.attributeValue("ExternalRedeliveries").toString.toLong
     def redeliveries = bean.attributeValue("Redeliveries").toString.toLong
 

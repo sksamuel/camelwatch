@@ -11,7 +11,11 @@
     <artifactId>camelwatch-api</artifactId>
 
     <dependencies>
-
+		<dependency>
+		   <groupId>org.springframework</groupId>
+		   <artifactId>spring-context</artifactId>
+		   <version>${spring.version}</version>
+		</dependency>
         <dependency>
             <groupId>org.jdom</groupId>
             <artifactId>jdom2</artifactId>
@@ -146,7 +150,7 @@
         <dependency>
             <groupId>com.sksamuel.jmxc</groupId>
             <artifactId>jmxc</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
