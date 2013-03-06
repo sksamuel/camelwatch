@@ -74,7 +74,7 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 	}
 
     @Override
-    public void enableTracing(boolean enable) throws Exception {
+    public void setTracing(boolean enable) throws Exception {
         conn.invoke(instance.getObjectName(),
                 "setTracing",
                 new Object[] {new Boolean(enable)},

@@ -24,5 +24,5 @@ public interface RouteOperations {
 
 	void updateRouteFromXml(String xml) throws Exception;
 
-    void enableTracing(boolean enable) throws Exception;
+    void setTracing(boolean enable) throws Exception;
 }
