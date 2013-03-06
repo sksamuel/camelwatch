@@ -23,4 +23,6 @@ public interface RouteOperations {
 	void suspend() throws Exception;
 
 	void updateRouteFromXml(String xml) throws Exception;
+
+    void enableTracing(boolean enable) throws Exception;
 }
