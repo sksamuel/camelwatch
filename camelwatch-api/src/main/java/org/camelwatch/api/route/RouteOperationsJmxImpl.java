@@ -73,4 +73,12 @@ public class RouteOperationsJmxImpl implements RouteOperations {
 				new String[] { "java.lang.String" });
 	}
 
+    @Override
+    public void setTracing(boolean enable) throws Exception {
+        conn.invoke(instance.getObjectName(),
+                "setTracing",
+                new Object[] {new Boolean(enable)},
+                new String[] { "java.lang.Boolean" }) ;
+    }
+
 }
