@@ -1,6 +1,8 @@
 Camelwatch
 ==========
 
+** Not maintained **
+
 Camelwatch is an open source project that provides a fully featured web console for the <a href="http://camel.apache.org/">Apache Camel</a> project. Camelwatch can monitor any remote camel instance by using the JMX hooks that camel provides.
 
 
